@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact — Eric J. Kimbembe</title>
+    <meta name="description" content="Get in touch with Eric J. Kimbembe, aspiring front-end developer.">
+    <link rel="icon" href="../images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/theme.js"></script>
+</head>
+<body id="top">
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+        <span class="theme-toggle__dot"></span>
+    </button>
+    <nav class="headl" aria-label="Main left">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#about">About</a>
+    </nav>
+    <a href="../index.html" class="logo" aria-label="Home"><img src="../images/logo.webp" alt="EJK"></a>
+    <nav class="headr" aria-label="Main right">
+        <a href="../index.html#project">Projects</a>
+        <a href="contact.html" class="is-active">Contact</a>
+    </nav>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+    </button>
+</header>
+
+<nav class="mobile-menu" aria-label="Mobile">
+    <a href="../index.html"><small>01</small>Home</a>
+    <a href="../index.html#about"><small>02</small>About</a>
+    <a href="../index.html#project"><small>03</small>Projects</a>
+    <a href="../index.html#skills"><small>04</small>Toolkit</a>
+    <a href="contact.html"><small>05</small>Contact</a>
+</nav>
+
+<main id="contact">
+    <section class="contactl">
+        <div>
+            <p class="eyebrow">Contact</p>
+            <h1>
+                <span class="line"><span>I'd love to</span></span>
+                <span class="line"><span><em>hear</em> from you</span></span>
+            </h1>
+            <p class="lead">A school, an internship, a project or just a hello — my inbox is open.</p>
+        </div>
+        <!-- EDIT ME: put your real links and usernames here -->
+        <ul class="socials">
+            <li>
+                <a href="#">
+                    <img src="../images/twitter.webp" alt="" class="soclogo">
+                    <span>@myacc</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../images/insta.webp" alt="" class="soclogo">
+                    <span>@myacc</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../images/linkedin-lighter-green.webp" alt="" class="soclogo">
+                    <span>@myacc</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../images/youtube-lighter-green.webp" alt="" class="soclogo">
+                    <span>@myacc</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="contactr">
+        <h2 class="h2aft">Contact Me</h2>
+        <form action="#" method="post" id="contact-form" novalidate>
+            <label>Full Name
+                <input type="text" name="name" placeholder="Enter your full name" required>
+                <small class="error">Please tell me your name.</small>
+            </label>
+            <label>Email
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <small class="error">Please enter a valid email.</small>
+            </label>
+            <label class="full">Subject
+                <select name="subject" required>
+                    <option value="" disabled selected>Choose a subject</option>
+                    <option>Internship / work-study</option>
+                    <option>School</option>
+                    <option>Project</option>
+                    <option>Just saying hi</option>
+                </select>
+                <small class="error">Please choose a subject.</small>
+            </label>
+            <label class="full">Message
+                <textarea name="message" rows="4" placeholder="Enter your message" required></textarea>
+                <small class="error">Please write a short message.</small>
+            </label>
+            <label class="checkbox full">
+                <input type="checkbox" name="consent" required>
+                I agree that my data can be used to respond to me.
+            </label>
+            <button type="submit" class="button1 magnetic">Send message <span aria-hidden="true">→</span></button>
+            <p class="form-note full" role="status" aria-live="polite"></p>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <div class="footrow">
+        <p>© 2026 Eric Jonathan Kimbembe</p>
+        <p>Hand-coded with HTML, CSS &amp; JS</p>
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

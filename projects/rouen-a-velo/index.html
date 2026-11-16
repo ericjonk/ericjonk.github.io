@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rouen à Vélo</title>
+    <!-- Font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <!-- JS -->
+    <script src="js/theme-init.js"></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+    <a class="logo" href="index.html">
+        <!-- Velo SVG -->
+        <svg class="rider" viewBox="0 0 130 110" width="80" height="68">
+            <g fill="none" stroke="currentColor" stroke-width="6"
+               stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="30" cy="70" r="22"/>
+                <circle cx="100" cy="70" r="22"/>
+                <path d="M30 70L52 36L84 36L100 70M52 36L66 70L84 36M46 26L60 26M84 36L80 22L92 22"/>
+            </g>
+            <circle cx="66" cy="70" r="5" fill="#F2B705"/>
+        </svg>
+        <span class="logo-text">
+            <span class="logo-nom">Rouen à Vélo</span>
+            <span class="logo-slogan">réparation · location · balades</span>
+        </span>
+    </a>
+    <!-- Hamburger Button -->
+    <button class="menu-toggle" id="menu-toggle" type="button">
+        <span class="menu-icon">☰</span>
+        <span>Menu</span>
+    </button>
+    <!-- Main navigation -->
+    <nav class="site-nav" id="main-nav">
+        <ul>
+            <li><a href="index.html" class="current">Accueil</a></li>
+            <li><a href="pages/velos.html">Nos vélos</a></li>
+            <li><a href="pages/atelier.html">L'atelier</a></li>
+            <li><a href="pages/balades.html">Balades</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Dark mode button -->
+    <button class="theme-toggle" id="theme-toggle" type="button" title="Mode clair / sombre">
+        <!-- Moon icon -->
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <!-- Sun icon -->
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+    </button>
+</header>
+<main>
+    <!-- The cool Banner -->
+    <section class="home-hero">
+        <div class="hero-ground"></div>
+        <svg class="hero-scene" viewBox="0 0 1440 620" preserveAspectRatio="xMaxYMax slice">
+          <g class="night" fill="#F7F5F0">
+            <circle cx="683" cy="93" r="1.6"/><circle cx="1353" cy="40" r="1.2"/><circle cx="1117" cy="64" r="1.6"/><circle cx="1213" cy="45" r="2.0"/><circle cx="459" cy="35" r="1.2"/><circle cx="908" cy="230" r="1.2"/><circle cx="512" cy="62" r="2.0"/><circle cx="889" cy="46" r="2.0"/><circle cx="1311" cy="47" r="2.0"/><circle cx="1219" cy="219" r="1.2"/><circle cx="472" cy="39" r="2.0"/><circle cx="878" cy="89" r="2.0"/><circle cx="1167" cy="108" r="1.2"/><circle cx="1211" cy="112" r="1.6"/><circle cx="148" cy="46" r="2.0"/><circle cx="1413" cy="288" r="1.6"/><circle cx="1219" cy="248" r="1.6"/><circle cx="1095" cy="269" r="1.6"/><circle cx="939" cy="163" r="2.0"/><circle cx="169" cy="76" r="2.0"/><circle cx="876" cy="100" r="1.6"/><circle cx="883" cy="36" r="2.0"/><circle cx="1237" cy="270" r="2.0"/><circle cx="954" cy="51" r="1.2"/><circle cx="1380" cy="49" r="1.2"/><circle cx="1389" cy="193" r="1.2"/><circle cx="965" cy="197" r="1.2"/><circle cx="1271" cy="75" r="1.6"/><circle cx="608" cy="82" r="2.0"/><circle cx="820" cy="270" r="1.2"/><circle cx="842" cy="297" r="1.6"/><circle cx="1146" cy="158" r="2.0"/><circle cx="870" cy="199" r="2.0"/><circle cx="329" cy="58" r="1.2"/>
+          </g>
+          <g class="sun">
+            <circle cx="1010" cy="150" r="104" fill="#F2B705" opacity=".18"/>
+            <circle cx="1010" cy="150" r="60" fill="#F2B705"/>
+          </g>
+          <g class="moon">
+            <circle cx="1010" cy="150" r="90" fill="#F7F5F0" opacity=".08"/>
+            <path d="M1026 102A50 50 0 1 0 1054 178A40 40 0 1 1 1026 102Z" fill="#F7F5F0"/>
+          </g>
+          <path fill="var(--far)" d="M0 470V428L19 407L38 428V470ZM38 470V431L62 404L87 431V470ZM87 470V416L106 395L125 416V470ZM127 470V410H165V470ZM165 470V417L189 391L213 417V470ZM217 470V412L236 392L254 412V470ZM254 470V438H294V470ZM298 470V435L318 414L337 435V470ZM337 470V442L356 422L374 442V470ZM374 470V441L396 416L419 441V470ZM419 470V418L446 389L472 418V470ZM474 470V419L496 394L519 419V470ZM519 470V411H580V470ZM584 470V412L608 385L633 412V470ZM633 470V421L652 401L670 421V470ZM674 470V432L704 399L734 432V470ZM734 470V419L759 392L784 419V470ZM784 470V423H842V470ZM842 470V426L870 395L898 426V470ZM898 470V428L920 403L943 428V470ZM945 470V428L972 398L999 428V470ZM999 470V427H1058V470ZM1058 470V411L1078 389L1098 411V470ZM1098 470V425L1115 406L1132 425V470ZM1132 470V420L1160 389L1188 420V470ZM1190 470V437L1212 412L1235 437V470ZM1410 470V434L1434 407L1459 434V470Z"/>
+          <path fill="var(--near)" d="M0 470V439H40V470ZM42 470V451H87V470ZM87 470V449L122 410L157 449V470ZM159 470V442L182 417L204 442V470ZM204 470V449H254V470ZM254 470V436H303V470ZM303 470V443L338 404L373 443V470ZM373 470V454H414V470ZM414 470V450L450 410L487 450V470ZM487 470V454L514 425L540 454V470ZM542 470V447H614V470ZM616 470V437L644 406L672 437V470ZM672 470V443H715V470ZM719 470V450L755 410L791 450V470ZM791 470V449H859V470ZM859 470V450L884 422L910 450V470ZM910 470V444H953V470ZM957 470V437L980 412L1003 437V470ZM1003 470V453H1060V470ZM1064 470V452L1084 429L1105 452V470ZM1105 470V440L1134 409L1162 440V470ZM1166 470V447H1238V470Z"/>
+          <path fill="var(--cathedral)" d="M1238 470V338L1280 318H1360L1402 338V470ZM1238 338V262H1282V338ZM1234 262L1260 206L1286 262ZM1358 338V262H1402V338ZM1354 262L1380 206L1406 262ZM1298 322L1320 52L1342 322Z"/>
+          <path fill="var(--far)" d="M1296 470V428Q1320 392 1344 428V470Z"/>
+          <circle fill="var(--far)" cx="1320" cy="376" r="15"/>
+          <g class="night-lights" fill="#F2B705"><rect x="1258" y="288" width="10" height="16" rx="5"/><rect x="1372" y="288" width="10" height="16" rx="5"/><rect x="1258" y="314" width="10" height="16" rx="5"/><rect x="1372" y="314" width="10" height="16" rx="5"/><rect x="1308" y="346" width="10" height="16" rx="5"/><rect x="1324" y="346" width="10" height="16" rx="5"/><rect x="1262" y="400" width="10" height="16" rx="5"/><rect x="1366" y="400" width="10" height="16" rx="5"/><rect x="1175" y="450" width="7" height="10" rx="1"/><rect x="946" y="452" width="7" height="10" rx="1"/><rect x="883" y="453" width="7" height="10" rx="1"/><rect x="833" y="442" width="7" height="10" rx="1"/><rect x="677" y="454" width="7" height="10" rx="1"/><rect x="522" y="443" width="7" height="10" rx="1"/><rect x="179" y="450" width="7" height="10" rx="1"/><rect x="650" y="453" width="7" height="10" rx="1"/><rect x="346" y="436" width="7" height="10" rx="1"/><rect x="779" y="452" width="7" height="10" rx="1"/><rect x="548" y="452" width="7" height="10" rx="1"/><rect x="987" y="449" width="7" height="10" rx="1"/><rect x="222" y="444" width="7" height="10" rx="1"/><rect x="1027" y="451" width="7" height="10" rx="1"/></g>
+          <rect y="470" width="1440" height="70" fill="var(--water)"/>
+          <path d="M1377 494h28M893 512h43M704 506h30M740 500h23M759 481h39M1144 509h46M47 504h39M1069 519h36M1059 484h25M478 486h23M553 497h20M381 497h26M874 523h34M841 489h52M1064 516h49M679 485h35M127 524h29M881 484h35M44 520h23M543 485h56M465 484h34M259 509h18M704 515h44M558 519h26M98 513h33M234 490h34" stroke="var(--ripple)" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+          <g fill="var(--barge)">
+            <path d="M610 508H770L756 528H624Z"/>
+            <rect x="660" y="490" width="62" height="18" rx="2"/>
+            <rect x="730" y="498" width="14" height="10"/>
+          </g>
+          <rect y="540" width="1440" height="80" fill="var(--quay)"/>
+          <rect y="540" width="1440" height="5" fill="var(--quay-edge)"/>
+          <path d="M0 592H1440" stroke="#F2B705" stroke-width="4" stroke-dasharray="26 20" opacity=".9"/>
+          <g fill="var(--lamp)">
+            <rect x="436" y="452" width="5" height="92"/><rect x="428" y="446" width="21" height="8" rx="4"/>
+            <rect x="796" y="452" width="5" height="92"/><rect x="788" y="446" width="21" height="8" rx="4"/>
+          </g>
+          <g class="night-lights" fill="#F2B705">
+            <circle cx="438" cy="450" r="9" opacity=".9"/><circle cx="798" cy="450" r="9" opacity=".9"/>
+          </g>
+          <ellipse cx="1028" cy="582" rx="200" ry="8" fill="#000" opacity=".14"/>
+          <g>
+            <g transform="translate(820 281) scale(3.2)" fill="none" stroke="var(--bike)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <g><circle cx="30" cy="70" r="22"/></g>
+              <g><circle cx="100" cy="70" r="22"/></g>
+              <path d="M30 70L52 36L84 36L100 70M52 36L66 70L84 36M46 26L60 26M84 36L80 22L92 22"/>
+              <circle cx="66" cy="70" r="5" fill="#F2B705" stroke="none"/>
+            </g>
+          </g>
+        </svg>
+        <div class="hero-copy">
+            <h1>Rouen se découvre à vélo.</h1>
+            <p>Location, réparation et balades au cœur de Rouen. Choisissez votre vélo, on s'occupe du reste.</p>
+            <div class="hero-actions">
+                <a class="btn" href="pages/velos.html">Voir les vélos</a>
+                <a class="btn-outline" href="pages/balades.html">Découvrir les balades</a>
+            </div>
+        </div>
+    </section>
+    <!-- Quick Facts -->
+    <div class="wrap">
+        <ul class="strip">
+            <li>
+                <span class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                <div class="strip-text"><strong>Horaires</strong><span>Du mardi au dimanche</span></div>
+            </li>
+            <li>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=12+Quai+de+la+Bourse+76000+Rouen" target="_blank" rel="noopener">
+                    <span class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+                    <div class="strip-text"><strong>12 quai de la Bourse</strong><span>76000 Rouen · voir l'itinéraire</span></div>
+                </a>
+            </li>
+            <li class="strip-promo">
+                <span class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>
+                <div class="strip-text"><strong>−10 % dès 3 jours</strong><span>sur le prix du vélo, payé sur place</span></div>
+            </li>
+        </ul>
+    </div>
+    <!-- Three Ways to Ride -->
+    <section class="home-section wrap">
+        <div class="section-head">
+            <div>
+                <h2>Louer, réparer, se balader.</h2>
+                <p>Tout se passe à l'atelier, quai de la Bourse.</p>
+            </div>
+        </div>
+        <div class="bento">
+            <a class="tile tile-rent" href="pages/velos.html">
+                <svg class="tile-art" viewBox="0 0 130 110" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="30" cy="70" r="22"/><circle cx="100" cy="70" r="22"/>
+                    <path d="M30 70L52 36L84 36L100 70M52 36L66 70L84 36M46 26L60 26M84 36L80 22L92 22"/>
+                </svg>
+                <h3>Louer un vélo</h3>
+                <p>De la draisienne au VTT électrique, à l'heure ou à la journée, dès <strong>2&nbsp;€</strong> de l'heure.</p>
+                <span class="more">Voir les vélos</span>
+            </a>
+            <a class="tile tile-repair" href="pages/atelier.html#services">
+                <svg class="tile-art" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+                <h3>Réparer</h3>
+                <p>Crevaison, freins, chaîne, révision : des prix fixes, main-d'œuvre comprise.</p>
+                <span class="more">Voir les tarifs</span>
+            </a>
+            <a class="tile tile-ride" href="pages/balades.html">
+                <svg class="tile-art" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>
+                </svg>
+                <h3>Se balader</h3>
+                <p>Six itinéraires entre quais, forêt et patrimoine. Un itinéraire est offert avec chaque location.</p>
+                <span class="more">Voir les balades</span>
+            </a>
+        </div>
+    </section>
+    <!-- Bikes Catalogue -->
+    <section class="home-section wrap">
+        <div class="section-head">
+            <div>
+                <h2>Un vélo pour chaque sortie.</h2>
+                <p>Ville, VTT, cargo ou vélo enfant : à l'heure ou à la journée.</p>
+            </div>
+            <a class="more" href="pages/velos.html">Voir les 10 vélos</a>
+        </div>
+        <ul class="bike-grid home-bikes">
+            <li class="bike-card">
+                <div class="bike-media">
+                    <img class="bike-photo" src="images/velos/citadine-electrique.jpg" alt="Citadine Électrique" width="800" height="600" loading="lazy">
+                    <div class="badges"><span class="badge badge-electric">Électrique</span></div>
+                </div>
+                <div class="bike-body">
+                    <h3 class="bike-name">Citadine Électrique</h3>
+                    <p class="bike-price"><strong class="price-hour">8&nbsp;€</strong> / h<span class="price-alt"><span class="price-day">30&nbsp;€</span> / jour</span></p>
+                    <a class="bike-book" href="pages/velos.html?bike=2">Réserver →</a>
+                </div>
+            </li>
+            <li class="bike-card">
+                <div class="bike-media">
+                    <img class="bike-photo" src="images/velos/vtt-foret-verte.jpg" alt="VTT Forêt Verte" width="800" height="600" loading="lazy">
+                    <div class="badges"></div>
+                </div>
+                <div class="bike-body">
+                    <h3 class="bike-name">VTT Forêt Verte</h3>
+                    <p class="bike-price"><strong class="price-hour">6&nbsp;€</strong> / h<span class="price-alt"><span class="price-day">22&nbsp;€</span> / jour</span></p>
+                    <a class="bike-book" href="pages/velos.html?bike=4">Réserver →</a>
+                </div>
+            </li>
+            <li class="bike-card">
+                <div class="bike-media">
+                    <img class="bike-photo" src="images/velos/cargo-familial.jpg" alt="Cargo Familial" width="800" height="600" loading="lazy">
+                    <div class="badges"><span class="badge badge-electric">Électrique</span></div>
+                </div>
+                <div class="bike-body">
+                    <h3 class="bike-name">Cargo Familial</h3>
+                    <p class="bike-price"><strong class="price-hour">12&nbsp;€</strong> / h<span class="price-alt"><span class="price-day">45&nbsp;€</span> / jour</span></p>
+                    <a class="bike-book" href="pages/velos.html?bike=6">Réserver →</a>
+                </div>
+            </li>
+            <li class="bike-card">
+                <div class="bike-media">
+                    <img class="bike-photo" src="images/velos/junior-20.jpg" alt="Junior 20 pouces" width="800" height="600" loading="lazy">
+                    <div class="badges"></div>
+                </div>
+                <div class="bike-body">
+                    <h3 class="bike-name">Junior 20 pouces</h3>
+                    <p class="bike-price"><strong class="price-hour">3&nbsp;€</strong> / h<span class="price-alt"><span class="price-day">10&nbsp;€</span> / jour</span></p>
+                    <a class="bike-book" href="pages/velos.html?bike=7">Réserver →</a>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <!-- To Book -->
+    <section class="home-section wrap">
+        <div class="how">
+            <div>
+                <div class="section-head"><h2>Réserver, c'est simple.</h2></div>
+                <ol class="steps">
+                    <li>
+                        <div>
+                            <h3>Choisissez un vélo</h3>
+                            <p>Filtrez par catégorie, ouvrez la fiche et regardez les tarifs.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Réglez la durée</h3>
+                            <p>À l'heure ou à la journée, avec casque, antivol ou siège enfant si besoin. Le prix se met à jour tout seul.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Passez le chercher</h3>
+                            <p>Paiement sur place, pièce d'identité en caution. Un itinéraire de balade est offert.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="offer">
+                <p class="offer-big">−10 %</p>
+                <p><strong>sur le prix du vélo</strong> à partir de 3 jours de location.</p>
+                <ul>
+                    <li><span>Casque</span><span>2 €</span></li>
+                    <li><span>Antivol</span><span>3 €</span></li>
+                    <li><span>Siège enfant</span><span>5 €</span></li>
+                </ul>
+                <p>Options ajoutées à la réservation, par location.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Routes -->
+    <section class="band">
+        <div class="wrap">
+            <div class="section-head">
+                <div>
+                    <h2>Six balades au départ de l'atelier.</h2>
+                    <p>Du plus facile au plus sportif. Un itinéraire est offert avec chaque location.</p>
+                </div>
+                <a class="more" href="pages/balades.html">Toutes les balades</a>
+            </div>
+            <ul class="home-routes">
+                <li class="route-card">
+                    <div class="route-media route-media-map">
+                        <svg class="map-drawing" viewBox="0 0 100 60" preserveAspectRatio="xMidYMid slice">
+                            <path d="M0 15H100M0 30H100M0 45H100M25 0V60M50 0V60M75 0V60" stroke="currentColor" stroke-width=".4" opacity=".25"/>
+                            <path d="M10 40 L28 40 L28 22 L50 22 L50 40 L72 40 L72 14 L90 14" fill="none" stroke="var(--links)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="route-badge route-badge-ville">Ville</span>
+                    </div>
+                    <div class="route-info">
+                        <h3>Le cœur historique</h3>
+                        <ul class="meta">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>4,2 km</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>~ 30 min</li>
+                            <li><svg viewBox="0 0 24 24"><rect x="3" y="15" width="4" height="5" rx="1" fill="currentColor"/><rect x="10" y="10" width="4" height="10" rx="1" opacity=".3" fill="currentColor"/><rect x="17" y="5" width="4" height="15" rx="1" opacity=".3" fill="currentColor"/></svg>Facile</li>
+                        </ul>
+                        <p>Découvrez le patrimoine de Rouen, de la cathédrale au Gros-Horloge.</p>
+                        <a class="route-link" href="pages/balades.html#coeur">Voir l'itinéraire →</a>
+                    </div>
+                </li>
+                <li class="route-card">
+                    <div class="route-media route-media-map">
+                        <svg class="map-drawing" viewBox="0 0 100 60" preserveAspectRatio="xMidYMid slice">
+                            <path d="M0 15H100M0 30H100M0 45H100M25 0V60M50 0V60M75 0V60" stroke="currentColor" stroke-width=".4" opacity=".25"/>
+                            <path d="M8 44 C24 52 30 30 46 34 S66 16 78 24 S88 38 92 20" fill="none" stroke="var(--links)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="route-badge route-badge-nature">Nature</span>
+                    </div>
+                    <div class="route-info">
+                        <h3>L'abbaye de Jumièges</h3>
+                        <ul class="meta">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>≈ 28 km</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>~ 2 h</li>
+                            <li><svg viewBox="0 0 24 24"><rect x="3" y="15" width="4" height="5" rx="1" fill="currentColor"/><rect x="10" y="10" width="4" height="10" rx="1" fill="currentColor"/><rect x="17" y="5" width="4" height="15" rx="1" opacity=".3" fill="currentColor"/></svg>Modéré</li>
+                        </ul>
+                        <p>Une escapade le long de la Seine jusqu'aux ruines de l'abbaye (distance et durée : aller simple).</p>
+                        <a class="route-link" href="pages/balades.html#jumieges">Voir l'itinéraire →</a>
+                    </div>
+                </li>
+                <li class="route-card">
+                    <div class="route-media route-media-map">
+                        <svg class="map-drawing" viewBox="0 0 100 60" preserveAspectRatio="xMidYMid slice">
+                            <path d="M0 15H100M0 30H100M0 45H100M25 0V60M50 0V60M75 0V60" stroke="currentColor" stroke-width=".4" opacity=".25"/>
+                            <path d="M8 50 L24 40 L34 44 L52 22 L62 28 L80 10 L92 14" fill="none" stroke="var(--links)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="route-badge route-badge-sportif">Sportif</span>
+                    </div>
+                    <div class="route-info">
+                        <h3>Les hauteurs de Rouen</h3>
+                        <ul class="meta">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>24 km</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>~ 2 h</li>
+                            <li><svg viewBox="0 0 24 24"><rect x="3" y="15" width="4" height="5" rx="1" fill="currentColor"/><rect x="10" y="10" width="4" height="10" rx="1" fill="currentColor"/><rect x="17" y="5" width="4" height="15" rx="1" fill="currentColor"/></svg>Sportif</li>
+                        </ul>
+                        <p>Un parcours plus exigeant avec de superbes panoramas sur la ville.</p>
+                        <a class="route-link" href="pages/balades.html#hauteurs">Voir l'itinéraire →</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- The WorkShop -->
+    <section class="home-section wrap">
+        <div class="workshop">
+            <img class="workshop-photo" src="images/atelier/boutique.jpg" alt="La boutique Rouen à Vélo, quai de la Bourse" width="800" height="600">
+            <div>
+                <h2>Une panne ? Réparation à prix fixe.</h2>
+                <p>Yanis et Léa réparent tout ce qui roule, souvent dans la journée. Si une pièce doit être changée en plus, nous vous prévenons avant.</p>
+                <ul class="price-board">
+                    <li><span>Crevaison</span><i class="leader"></i><strong>12 €</strong></li>
+                    <li><span>Réglage des freins</span><i class="leader"></i><strong>15 €</strong></li>
+                    <li><span>Changement de chaîne</span><i class="leader"></i><strong>25 €</strong></li>
+                    <li><span>Révision complète</span><i class="leader"></i><strong>45 €</strong></li>
+                </ul>
+                <a class="more" href="pages/atelier.html">Découvrir l'atelier et l'équipe</a>
+            </div>
+        </div>
+    </section>
+    <!-- Hours and Address -->
+    <section class="home-section wrap">
+        <div class="section-head"><h2>Passez nous voir.</h2></div>
+        <div class="visit">
+            <div class="card">
+                <h3>Horaires d'ouverture</h3>
+                <table class="hours">
+                    <tbody>
+                        <tr><th scope="row">Lundi</th><td>Fermé</td></tr>
+                        <tr><th scope="row">Mardi</th><td>9h00 – 19h00</td></tr>
+                        <tr><th scope="row">Mercredi</th><td>9h00 – 19h00</td></tr>
+                        <tr><th scope="row">Jeudi</th><td>9h00 – 19h00</td></tr>
+                        <tr><th scope="row">Vendredi</th><td>9h00 – 19h00</td></tr>
+                        <tr><th scope="row">Samedi</th><td>9h00 – 19h00</td></tr>
+                        <tr><th scope="row">Dimanche</th><td>10h00 – 17h00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card">
+                <h3>Adresse</h3>
+                <address class="address">
+                    12 quai de la Bourse<br>
+                    76000 Rouen<br>
+                    <a href="tel:+33235000000">02 35 00 00 00</a><br>
+                    <a href="mailto:contact@rouen-a-velo.example">contact@rouen-a-velo.example</a>
+                </address>
+                <ul class="perks">
+                    <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><span>Paiement sur place</span></li>
+                    <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><span>Pièce d'identité en caution</span></li>
+                    <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><span>Itinéraire de balade offert avec la location</span></li>
+                </ul>
+                <div class="hero-actions">
+                    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=12+Quai+de+la+Bourse+76000+Rouen"
+                       target="_blank" rel="noopener">Voir l'itinéraire</a>
+                    <a class="btn-outline" href="pages/contact.html">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="home-section home-cta wrap">
+        <div class="cta cta-big">
+            <svg class="cta-route" viewBox="0 0 400 200" preserveAspectRatio="xMaxYMid slice">
+                <path d="M0 175C70 175 90 70 170 88S270 175 325 105S385 45 400 30" fill="none" stroke="currentColor" stroke-width="5" stroke-dasharray="1 14" stroke-linecap="round"/>
+                <circle cx="325" cy="105" r="9" fill="currentColor"/>
+            </svg>
+            <div class="cta-text">
+                <h2>Prêt à rouler ?</h2>
+                <p>Choisissez votre vélo en ligne, payez sur place. On s'occupe du reste.</p>
+                <div class="hero-actions">
+                    <a class="btn" href="pages/velos.html">Choisir mon vélo</a>
+                    <a class="btn-outline" href="pages/balades.html">Voir les balades</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <div>
+            <p class="footer-name">Rouen à Vélo</p>
+            <p>Réparation, location et balades à vélo, au cœur de Rouen.</p>
+        </div>
+        <div>
+            <h2>Pages</h2>
+            <ul>
+                <li><a href="index.html" class="current">Accueil</a></li>
+                <li><a href="pages/velos.html">Nos vélos</a></li>
+                <li><a href="pages/atelier.html">L'atelier</a></li>
+                <li><a href="pages/balades.html">Balades</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2>L'atelier</h2>
+            <p>12 quai de la Bourse, 76000 Rouen<br>Du mardi au samedi, 9h – 19h<br>Dimanche, 10h – 17h</p>
+        </div>
+    </div>
+    <p class="footer-note">© 2026 Rouen à Vélo</p>
+</footer>
+</body>
+</html>

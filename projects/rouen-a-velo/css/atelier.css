@@ -1,0 +1,144 @@
+/* Story */
+.story {
+  display: grid;
+  gap: 28px;
+  align-items: center;
+}
+.story-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+.story p {
+  line-height: 1.6;
+}
+.signature {
+  font-weight: 600; color: var(--links);
+}
+
+/* Team */
+.team {
+  display: grid;
+  gap: 24px;
+}
+.team-intro p:not(.eyebrow) {
+  line-height: 1.6;
+}
+.team-grid {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.team-grid::-webkit-scrollbar {
+  display: none;
+}
+.member {
+  flex: 1 0 220px;
+  padding: 20px;
+  text-align: center;
+  scroll-snap-align: start;
+}
+.member h3 {
+  margin-bottom: 2px;
+}
+.member p {
+  margin: 0 0 8px;
+  font-size: .9375rem;
+  line-height: 1.5;
+}
+.member .role {
+  font-weight: 600; color: var(--links);
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 12px;
+  font: 700 2rem Poppins, Arial, sans-serif;
+  color: var(--night-blue);
+  background: var(--yellow-sun);
+  border-radius: 50%;
+}
+
+/* Repair prices: 2 x 2 cards */
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.service {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+}
+.service h3 {
+  margin: 0 0 2px;
+  font-size: 1.125rem;
+}
+.service-desc {
+  margin: 0;
+  font-size: .9375rem;
+}
+.service-price {
+  margin: 0 0 0 auto;
+  font: 700 1.375rem Poppins, Arial, sans-serif;
+  color: var(--links);
+}
+.note {
+  margin: 16px 0 0;
+  font-size: .9375rem;
+  line-height: 1.5;
+}
+
+/* FAQ */
+.faq {
+  display: grid;
+  gap: 12px;
+  align-items: start;
+}
+.faq details {
+  padding: 4px 16px;
+  background: var(--h-backg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.faq summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.faq summary:focus-visible {
+  outline: 3px solid var(--links);
+  outline-offset: 2px;
+}
+.faq details p {
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+@media (min-width: 760px) {
+  .story { grid-template-columns: 1fr 1.1fr; gap: 40px; }
+  .team { grid-template-columns: 1fr 2fr; align-items: center; gap: 32px; }
+  .faq { grid-template-columns: 1fr 1fr; }
+  .service-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  .service-price { font-size: 1.25rem; }
+}

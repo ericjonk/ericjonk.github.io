@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rouen à Vélo — Eric J. Kimbembe</title>
+    <meta name="description" content="Rouen à Vélo: a five-page website for a bike rental and repair workshop, built in HTML, CSS and JavaScript.">
+    <link rel="icon" href="../images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/theme.js"></script>
+</head>
+<body id="top">
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+        <span class="theme-toggle__dot"></span>
+    </button>
+    <nav class="headl" aria-label="Main left">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#about">About</a>
+    </nav>
+    <a href="../index.html" class="logo" aria-label="Home"><img src="../images/logo.webp" alt="EJK"></a>
+    <nav class="headr" aria-label="Main right">
+        <a href="../index.html#project" class="is-active">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+    </button>
+</header>
+
+<nav class="mobile-menu" aria-label="Mobile">
+    <a href="../index.html"><small>01</small>Home</a>
+    <a href="../index.html#about"><small>02</small>About</a>
+    <a href="../index.html#project"><small>03</small>Projects</a>
+    <a href="../index.html#skills"><small>04</small>Toolkit</a>
+    <a href="contact.html"><small>05</small>Contact</a>
+</nav>
+
+<main class="project">
+    <section class="phero">
+        <a href="../index.html#project" class="back"><span aria-hidden="true">←</span> All projects</a>
+        <p class="eyebrow">School project · 2026</p>
+        <h1>
+            <span class="line"><span>Rouen</span></span>
+            <span class="line"><span><em>à Vélo</em></span></span>
+        </h1>
+        <p class="lead">A five-page website for a bike rental and repair workshop on the banks of the Seine, designed for visitors on their phone.</p>
+        <!-- EDIT ME: when the site is on GitHub Pages, replace the first link with its address -->
+        <div class="buttons">
+            <a href="../projects/rouen-a-velo/index.html" class="button1 magnetic">Visit the site <span aria-hidden="true">→</span></a>
+        </div>
+        <dl class="facts">
+            <div><dt>Type</dt><dd>Training project, Need for School</dd></div>
+            <div><dt>Stack</dt><dd>HTML, CSS, JavaScript — no framework</dd></div>
+            <div><dt>Pages</dt><dd>Home, bikes, workshop, rides, contact</dd></div>
+            <div><dt>Language</dt><dd>French</dd></div>
+        </dl>
+    </section>
+
+    <div class="shot-switch" role="group" aria-label="Screenshot theme">
+        <span>Screenshots</span>
+        <button type="button" data-shots="light">Light</button>
+        <button type="button" data-shots="dark">Dark</button>
+    </div>
+    <figure class="shot" data-reveal>
+        <div class="browser">
+            <div class="browser__bar"><i></i><i></i><i></i></div>
+            <img class="shot-light" src="../images/projects/velo-home-light.webp" alt="Home page of Rouen à Vélo with an illustrated view of the Seine" width="1600" height="900">
+                <img class="shot-dark" src="../images/projects/velo-home-dark.webp" alt="Home page of Rouen à Vélo with an illustrated view of the Seine, dark mode" width="1600" height="900">
+        </div>
+    </figure>
+
+    <section class="pblock">
+        <div data-reveal>
+            <p class="eyebrow">The brief</p>
+            <h2 class="h2aft">A client who was <em>losing customers</em></h2>
+        </div>
+        <div class="pblock__text" data-reveal>
+            <p>The (fictional) client runs a small bike workshop in Rouen and had no website. Her customers are tourists and locals searching on their phone, and they kept asking the same two questions: is this bike available, and how much will it cost?</p>
+            <p>The site had to answer both before they came to the shop, present the workshop and its prices, and be pleasant on a small screen. The rules: HTML, CSS and JavaScript only, with no library or framework.</p>
+        </div>
+    </section>
+
+    <section class="pblock pblock--stack">
+        <div data-reveal>
+            <p class="eyebrow">What I built</p>
+            <h2 class="h2aft">From a data file to a <em>booking</em></h2>
+        </div>
+        <ul class="rows">
+            <li data-reveal><span class="rows__n">01</span><strong>Catalogue</strong><span class="rows__d">The ten bikes are generated from a JavaScript data file, with search, category filters and sorting by price</span></li>
+            <li data-reveal><span class="rows__n">02</span><strong>Booking</strong><span class="rows__d">A dialog computes the exact price live: duration, helmet, lock or child seat, and 10% off from three days</span></li>
+            <li data-reveal><span class="rows__n">03</span><strong>Dark mode</strong><span class="rows__d">A toggle that remembers the choice, and switches to dark by itself in the evening</span></li>
+            <li data-reveal><span class="rows__n">04</span><strong>Mobile first</strong><span class="rows__d">Responsive layout with a hamburger menu that still works if JavaScript is off</span></li>
+            <li data-reveal><span class="rows__n">05</span><strong>Content</strong><span class="rows__d">Repair prices, team, FAQ, six rides, opening hours, a contact form and a map</span></li>
+        </ul>
+    </section>
+
+    <section class="gallery">
+        <figure class="shot" data-reveal>
+            <div class="browser">
+                <div class="browser__bar"><i></i><i></i><i></i></div>
+                <img class="shot-light" src="../images/projects/velo-velos-light.webp" alt="Bike catalogue with search, filters and sorting" loading="lazy" width="1600" height="900">
+                <img class="shot-dark" src="../images/projects/velo-velos-dark.webp" alt="Bike catalogue with search, filters and sorting, dark mode" loading="lazy" width="1600" height="900">
+            </div>
+            <figcaption>The catalogue: search, filters and sorting</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+            <div class="browser">
+                <div class="browser__bar"><i></i><i></i><i></i></div>
+                <img class="shot-light" src="../images/projects/velo-dialog-light.webp" alt="Booking dialog showing options and the total price" loading="lazy" width="1600" height="900">
+                <img class="shot-dark" src="../images/projects/velo-dialog-dark.webp" alt="Booking dialog showing options and the total price, dark mode" loading="lazy" width="1600" height="900">
+            </div>
+            <figcaption>The booking dialog with its live total</figcaption>
+        </figure>
+        <figure class="shot shot--phones" data-reveal>
+            <div class="phone">
+                <img class="shot-light" src="../images/projects/velo-m-home-light.webp" alt="Home page on a phone" loading="lazy" width="440" height="958">
+                <img class="shot-dark" src="../images/projects/velo-m-home-dark.webp" alt="Home page on a phone, dark mode" loading="lazy" width="440" height="958">
+            </div>
+            <div class="phone">
+                <img class="shot-light" src="../images/projects/velo-m-velos-light.webp" alt="Bike catalogue on a phone" loading="lazy" width="440" height="958">
+                <img class="shot-dark" src="../images/projects/velo-m-velos-dark.webp" alt="Bike catalogue on a phone, dark mode" loading="lazy" width="440" height="958">
+            </div>
+            <div class="phone">
+                <img class="shot-light" src="../images/projects/velo-m-contact-light.webp" alt="Contact page on a phone" loading="lazy" width="440" height="958">
+                <img class="shot-dark" src="../images/projects/velo-m-contact-dark.webp" alt="Contact page on a phone, dark mode" loading="lazy" width="440" height="958">
+            </div>
+            <figcaption>Home, bikes and contact on a phone</figcaption>
+        </figure>
+    </section>
+
+    <section class="pnext" data-reveal>
+        <a href="../index.html#project" class="button1 button1--ghost magnetic"><span aria-hidden="true">←</span> Back to projects</a>
+        <a href="contact.html" class="button1 magnetic">Contact me <span aria-hidden="true">→</span></a>
+    </section>
+</main>
+
+<a href="#top" class="to-top" aria-label="Back to top">&uarr;</a>
+
+<footer>
+    <div class="footrow">
+        <p>© 2026 Eric Jonathan Kimbembe</p>
+        <p>Hand-coded with HTML, CSS &amp; JS</p>
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

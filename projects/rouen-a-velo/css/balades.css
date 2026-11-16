@@ -1,0 +1,125 @@
+/* Highlights strip */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: -28px 0 56px;
+  padding: 16px 20px;
+  list-style: none;
+  background: var(--h-backg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.highlights li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: .9375rem;
+}
+
+/* Featured route */
+.featured {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  padding: 20px;
+  background: var(--h-backg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.featured-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.featured p {
+  line-height: 1.6;
+}
+.featured p:not(.eyebrow) {
+  margin: 0;
+}
+
+/* Route cards */
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Tips */
+.tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tips h3 {
+  margin-bottom: 6px;
+  font-size: 1.125rem;
+}
+.tips p {
+  margin: 0;
+  line-height: 1.5;
+}
+.route-more summary {
+  cursor: pointer;
+  list-style: none;
+}
+.route-more summary::-webkit-details-marker { display: none; }
+.route-more summary::after { content: "\00a0→"; }
+.route-more[open] summary::after { content: "\00a0↓"; }
+.route-more summary:focus-visible {
+  outline: 3px solid var(--links);
+  outline-offset: 2px;
+}
+.route-card .route-more { margin-top: auto; }
+.route-card summary {
+  min-height: 44px;
+  font: 600 .9375rem/44px Inter, Arial, sans-serif;
+  text-align: right;
+  color: var(--links);
+}
+.route-card summary:hover { text-decoration: underline; }
+.featured .route-more { margin-top: 4px; }
+.stops {
+  margin: 8px 0 12px;
+  padding-left: 20px;
+  font-size: .9375rem;
+  line-height: 1.8;
+}
+.route-more .bike-advice {
+  margin: 0;
+  padding-top: 12px;
+  font-size: .9375rem;
+  border-top: 1px solid var(--border);
+}
+.route-more .bike-advice a {
+  color: var(--links);
+  font-weight: 600;
+}
+.route-card:target {
+  border-color: var(--links);
+  box-shadow: 0 0 0 2px var(--links);
+}
+
+@media (min-width: 760px) {
+  .featured { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 700px) {
+  .highlights { grid-template-columns: 1fr 1fr; }
+  .route-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .highlights { margin-top: -28px; }
+}

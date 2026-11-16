@@ -1,0 +1,168 @@
+/* Banner under the header */
+.promo-banner {
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--night-blue);         /* dark text on yellow: readable in both themes */
+  background: var(--yellow-sun);
+}
+.promo-banner p { margin: 0; }
+
+/* Search and filters (simple bar, no box) */
+.toolbar { display: flex; flex-direction: column; gap: 18px; }
+.toolbar input[type="search"] {
+  width: 100%;
+  max-width: 460px;
+  padding: 10px 16px;
+  font: 400 .9375rem Inter, Arial, sans-serif;
+  color: var(--text);
+  background: var(--h-backg);
+  border: 1px solid var(--field-border);
+  border-radius: 999px;
+}
+.toolbar input[type="search"]:focus-visible { outline: 3px solid var(--links); outline-offset: 2px; }
+
+.filter-rows { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; padding-top: 18px; border-top: 1px solid var(--border); min-width: 0; }
+.filter-group { min-width: 0; }
+.filter-group-extra { padding-left: 32px; border-left: 1px solid var(--border); }   /* thin divider between the two groups */
+
+.chips-label {                      /* small label above each group of chips */
+  margin: 0 0 6px;
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+.chip-small span { min-height: 34px; padding: 0 12px; font-size: .875rem; font-weight: 500; }   /* the two extra filters: smaller and quieter */
+.chip-icon { width: 16px; height: 16px; flex: none; }
+
+.reset-link {
+  min-height: 38px;
+  padding: 0 6px;
+  font: 600 .875rem Inter, Arial, sans-serif;
+  color: var(--links);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.reset-link:hover { text-decoration: underline; }
+
+/* Count (left) and sort (right), just above the bikes */
+.results-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 12px 0 16px; }
+.sort { display: flex; align-items: center; gap: 8px; font-size: .875rem; font-weight: 600; }
+.sort select {
+  appearance: none;                 /* removes the browser's look so we can style it */
+  padding: 6px 30px 6px 12px;
+  font: 600 .875rem Inter, Arial, sans-serif;
+  color: var(--text);
+  background: var(--h-backg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237b8a96' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center / 14px;
+  border: 1px solid var(--field-border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.sort select:focus-visible { outline: 3px solid var(--links); outline-offset: 2px; }
+
+.badge-type {                       /* used in the detail window; solid background so it stays readable on the photo */
+  color: var(--text);
+  background: var(--h-backg);
+  border: 1px solid var(--field-border);
+}
+
+.no-result { margin: 24px 0; font-weight: 600; }
+
+/* The detail window */
+.bike-dialog { width: min(900px, calc(100% - 32px)); max-height: calc(100vh - 48px); max-height: calc(100dvh - 48px); }
+.dialog-inner { display: grid; grid-template-columns: 1fr; }   /* phones: photo, then the form */
+.dialog-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.dialog-text,
+.dialog-form { padding: 20px; }
+
+.bike-dialog h2 { margin: 0 0 8px; font: 700 1.5rem Poppins, Arial, sans-serif; color: var(--links); line-height: 1.2; }
+#dialog-desc { margin: 0 0 12px; line-height: 1.6; }
+.dialog-rates { margin: 0; }
+.dialog-unavailable-note { margin: 0; font-weight: 600; }
+
+.dialog-form .field-group { margin: 0 0 20px; padding: 0; border: 0; min-width: 0; }
+.dialog-form legend { margin-bottom: 8px; padding: 0; font-weight: 600; }
+.options { display: flex; flex-direction: column; gap: 4px; }   /* one option per line, like a list */
+.check { display: flex; align-items: center; gap: 12px; min-height: 44px; cursor: pointer; }
+.check input { width: 22px; height: 22px; margin: 0; accent-color: var(--green-velo); }
+
+/* Duration: a number with its own − / + buttons, then hours/days */
+.duration { display: flex; gap: 8px; }
+.duration input,
+.duration select {
+  min-height: 44px;
+  padding: 8px 12px;
+  font: 400 1rem Inter, Arial, sans-serif;
+  color: var(--text);
+  background: var(--backg);
+  border: 2px solid var(--field-border);
+  border-radius: 8px;
+}
+.duration select { flex: 1; }
+.duration input:focus-visible,
+.duration select:focus-visible { outline: 3px solid var(--links); outline-offset: 2px; }
+
+.stepper { display: flex; align-items: stretch; }
+.stepper input {
+  width: 64px;
+  text-align: center;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  appearance: textfield;            /* hides the browser's small arrows (Firefox) */
+}
+.stepper input::-webkit-outer-spin-button,
+.stepper input::-webkit-inner-spin-button { appearance: none; margin: 0; }   /* same for Chrome / Safari */
+.step-btn {
+  width: 44px;
+  min-height: 44px;
+  font: 600 1.25rem Inter, Arial, sans-serif;
+  color: var(--links);
+  background: var(--backg);
+  border: 2px solid var(--field-border);
+  cursor: pointer;
+}
+.step-btn:first-child { border-radius: 8px 0 0 8px; }
+.step-btn:last-child { border-radius: 0 8px 8px 0; }
+.step-btn:hover { background: rgba(127, 127, 127, .15); }
+.step-btn:focus-visible { outline: 3px solid var(--links); outline-offset: 2px; }
+
+.hint { margin: 8px 0 0; }
+
+/* The price lines */
+.summary { margin: 0 0 16px; padding-top: 8px; border-top: 1px solid var(--border); }
+.summary-row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; }
+.summary-row dt { margin: 0; }
+.summary-row dd { margin: 0; font-weight: 600; text-align: right; white-space: nowrap; }
+.summary-discount dd { color: var(--links); }
+.summary-total { margin-top: 6px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 1.25rem; font-weight: 600; }
+
+.dialog-form .btn { width: 100%; }
+
+@media (min-width: 760px) {
+  .dialog-inner { grid-template-columns: 1fr 1fr; }   /* photo + description on the left, the form on the right */
+  .dialog-form { padding-top: 52px; border-left: 1px solid var(--border); }   /* room for the close button */
+}
+
+@media (max-width: 700px) {
+  .toolbar input[type="search"] { max-width: none; }
+  .filter-rows { flex-direction: column; align-items: stretch; gap: 10px; }
+  .filter-group-extra { padding-left: 0; border-left: 0; }
+
+  .chips-types { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }   /* categories: ONE line that scrolls sideways */
+  .chips-types::-webkit-scrollbar { display: none; }
+
+  /* On phones the window slides up from the bottom, like a sheet */
+  .bike-dialog {
+    width: 100%;
+    max-width: 100%;
+    margin: auto 0 0;
+    max-height: 92vh;
+    max-height: 92dvh;
+    border-bottom: 0;
+    border-radius: 16px 16px 0 0;
+  }
+}

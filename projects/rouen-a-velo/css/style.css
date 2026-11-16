@@ -1,0 +1,649 @@
+/*
+Brand colours + light theme
+*/
+:root {
+  --green-velo: #1F7A5C;
+  --dark-green: #17604A;              /* used when hovering a button */
+  --yellow-sun: #F2B705;
+  --night-blue: #1C2B39;
+  --off-white: #F7F5F0;
+  --slate: #14202B;
+
+  --backg: var(--off-white);          /* page background */
+  --h-backg: #ffffff;                 /* header, cards and windows */
+  --border: #e3e0d8;                  /* thin border lines */
+  --text: var(--night-blue);          /* normal text (also the "Rouen à Vélo" name) */
+  --links: var(--green-velo);         /* links and headings */
+  --logo-velo: var(--green-velo);     /* bike drawing: green in light mode */
+  --logo-slogan: var(--green-velo);   /* tagline: green in light mode */
+  --icon: var(--night-blue);          /* moon icon */
+  --field-border: #7b8a96;            /* outline of form fields and chips: strong enough to be seen */
+  --error: #C0392B;                   /* red: error messages ONLY (brand guidelines) */
+  --band: var(--night-blue);          /* dark strip on the home page */
+
+  /* Home page illustration (morning) */
+  --sky-top: #BFE3D8;
+  --sky-low: #FBEFC9;
+  --far: #A9D2C4;                     /* houses far away */
+  --near: #86B9A8;                    /* houses closer */
+  --cathedral: #5E9C8A;
+  --water: #6FA8C7;
+  --ripple: #ffffff;
+  --barge: #3E6E7E;
+  --quay: #E9E3D2;
+  --quay-edge: #CFC8B3;
+  --lamp: #4B6A63;
+  --bike: var(--logo-velo);
+}
+
+/* ----- Dark theme ----- */
+[data-theme="dark"] {
+  --backg: var(--slate);
+  --h-backg: var(--night-blue);
+  --border: #2b3d4e;
+  --text: var(--off-white);
+  --links: #6FD3AE;
+  --logo-velo: var(--off-white);
+  --logo-slogan: var(--yellow-sun);
+  --icon: var(--yellow-sun);
+  --error: #FF8F80;
+  --band: #0E1822;
+
+  /* Home page illustration (night) */
+  --sky-top: #0A121A;
+  --sky-low: #24495D;
+  --far: #1D3646;
+  --near: #152B3A;
+  --cathedral: #0F2230;
+  --water: #173448;
+  --ripple: #6FD3AE;
+  --barge: #0B1B26;
+  --quay: #0D1821;
+  --quay-edge: #1C2F3E;
+  --lamp: #2A4457;
+}
+
+
+/*
+BASE
+*/
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;                               /* minimum text size in the brand guidelines */
+  color: var(--text);
+  background: var(--backg);
+  transition: background-color .3s, color .3s;   /* smooth fade when switching theme */
+}
+
+h1, h2, h3 { font-family: Poppins, Arial, sans-serif; line-height: 1.2; }
+
+[hidden] { display: none !important; }           /* the "hidden" attribute must always win */
+
+.visually-hidden {                               /* hidden on screen, but still part of the page */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Keyboard focus: visible outline when using the Tab key */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--yellow-sun);
+  outline-offset: 3px;
+}
+
+body:has(dialog[open]) { overflow: hidden; }     /* the page behind a window does not scroll */
+
+
+/*
+HEADER
+*/
+.site-header {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  padding: 8px 16px;
+  background: var(--h-backg);
+  border-bottom: 1px solid var(--border);
+  transition: background-color .3s, border-color .3s;
+}
+
+.logo {
+  position: relative;               /* the bike is positioned relative to the logo, not the whole header */
+  display: flex;
+  align-items: center;
+  min-height: 76px;                 /* bike height (68 px) + a little margin so it is not clipped */
+  padding-left: 96px;               /* empty space on the left where the bike sits */
+  text-decoration: none;
+}
+
+/* The text block: the name on top, the tagline below */
+.logo-text {
+  position: relative;
+  z-index: 4;                       /* in front of the bike (3), so the bike passes behind the text */
+  display: flex;
+  flex-direction: column;
+}
+.logo-nom {                         /* nom = name */
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--text);
+}
+.logo-slogan {                      /* slogan = tagline */
+  font-size: 1rem;
+  line-height: 1.3;
+  color: var(--logo-slogan);
+}
+
+/* The bike that rides across the header.
+   z-index 3: in front of the buttons and links, behind the logo text (4) */
+.rider {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: 0 -50%;                /* resting position: left edge of the logo, centred vertically */
+  z-index: 3;
+  color: var(--logo-velo);          /* the SVG uses currentColor, so it takes this colour */
+  pointer-events: none;             /* clicks go through the bike to whatever is underneath */
+  animation: ride 10s linear 2;     /* 10 s long, played 2 times, then it stays home */
+}
+@keyframes ride {
+  0%, 8%    { translate: 0 -50%; }       /* rests at home for the first moments */
+  58%       { translate: 100vw -50%; }   /* rides to the right until it leaves the screen */
+  58.01%    { translate: -120px -50%;    /* instantly jumps off-screen on the left (invisible) */
+    animation-timing-function: ease-out; }
+  75%, 100% { translate: 0 -50%; }       /* rides back to its home spot and parks */
+}
+
+/* Navigation links */
+.site-nav { margin-left: auto; }          /* pushes the links (and the button after them) to the right */
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-nav a {
+  color: var(--links);
+  font-weight: 600;
+  text-decoration: none;
+}
+.site-nav a:hover,
+.site-nav a.current { text-decoration: underline; }   /* "current" = the page you are on */
+
+/* Dark mode button: just a small icon, no background, no text */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;                      /* the clickable area stays 44 x 44 px for fingers... */
+  height: 44px;
+  padding: 0;
+  color: var(--icon);
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.theme-toggle svg { width: 22px; height: 22px; }   /* ...but the icon itself is small */
+.theme-toggle:hover { background: rgba(127, 127, 127, .2); }
+
+/* Moon in light mode (click = go dark), sun in dark mode (click = go light) */
+.icon-sun { display: none; }
+[data-theme="dark"] .icon-sun { display: inline; }
+[data-theme="dark"] .icon-moon { display: none; }
+
+/* Hamburger button (phones only) */
+.menu-toggle {
+  display: none;                    /* hidden on large screens: the links are already visible */
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 14px;
+  font: 600 1rem Inter, Arial, sans-serif;
+  color: #fff;
+  background: var(--green-velo);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.menu-toggle:hover { background: var(--dark-green); }
+
+@media (max-width: 700px) {
+  .site-header { gap: 0 8px; }
+
+  /* Row 1: the logo on the left, then the dark mode icon and the hamburger on the right */
+  .logo { flex: 1 1 0; min-width: 0; padding-left: 90px; }
+  .logo-nom { font-size: 1.125rem; white-space: nowrap; }
+  .logo-slogan { display: none; }
+
+  .theme-toggle { order: 1; }
+
+  .js .menu-toggle {
+    display: inline-flex;
+    order: 2;
+    justify-content: center;
+    width: 44px;                    /* icon only: a 44 x 44 px square */
+    padding: 0;
+  }
+  .menu-toggle span:last-child {    /* the word "Menu" stays in the page but is not drawn */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .menu-icon { font-size: 1.375rem; }
+
+  /* Row 2 (opened with the hamburger): the links, one per line */
+  .site-nav { order: 3; flex-basis: 100%; margin-left: 0; }
+  .site-nav ul { flex-direction: column; gap: 0; }
+  .site-nav a {
+    display: block;
+    min-height: 44px;
+    padding: 11px 4px;
+    border-top: 1px solid var(--border);
+  }
+  .js .site-nav { display: none; }              /* without JavaScript the links simply stay visible */
+  .js .site-nav.is-open { display: block; }
+}
+
+
+/* ============================================================
+   4. SHARED PARTS
+   ============================================================ */
+
+/* ----- Page containers ----- */
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+.page { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
+.page > section { margin-bottom: 56px; }                 /* even space between the blocks of a page */
+.page > .page-intro { margin-bottom: 24px; }
+.page-intro p { margin: 0; max-width: 60ch; line-height: 1.6; }
+
+.page h1, .page h2, .page h3 { color: var(--links); }
+.page h1 { margin: 0 0 12px; font-size: 2rem; }
+.page h2 { margin: 0 0 12px; font-size: 1.75rem; }
+.page h3 { margin: 0 0 8px;  font-size: 1.25rem; }
+
+/* Small coloured caption above a title */
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--links);
+}
+
+.icon { width: 24px; height: 24px; flex: none; color: var(--links); }
+
+/* ----- Cards ----- */
+.card {
+  padding: 28px;
+  background: var(--h-backg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: background-color .3s, border-color .3s;
+}
+
+/* ----- Buttons (a <button> or a link can use these classes) ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  font: 600 1rem Inter, Arial, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  background: var(--green-velo);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn:hover { background: var(--dark-green); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  font: 600 1rem Inter, Arial, sans-serif;
+  color: inherit;
+  text-decoration: none;
+  border: 2px solid currentColor;
+  border-radius: 10px;
+}
+.btn-outline:hover { background: rgba(127, 127, 127, .2); }
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+
+/* Text link with a small arrow that moves on hover */
+.more { font-weight: 600; color: var(--links); text-decoration: none; white-space: nowrap; }
+.more::after { content: "→"; display: inline-block; margin-left: 6px; transition: transform .2s; }
+.more:hover::after { transform: translateX(4px); }
+
+/* ----- Photo hero and call-to-action blocks (a photo, a colour layer on top, then the text) ----- */
+.hero,
+.cta {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;               /* keeps the photo and the layer behind the text, inside the block */
+  color: #fff;
+  background: var(--night-blue);
+  border-radius: 16px;
+}
+.cover {                            /* the photo: fills the block */
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero::before,
+.cta::before {                      /* dark layer so the text stays readable in both themes */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.hero::before { background: linear-gradient(90deg, rgba(20, 32, 43, .92) 0%, rgba(20, 32, 43, .65) 55%, rgba(20, 32, 43, .2) 100%); }
+.cta { background: var(--dark-green); }
+.cta::before { background: linear-gradient(90deg, rgba(23, 96, 74, .95) 0%, rgba(23, 96, 74, .75) 55%, rgba(23, 96, 74, .3) 100%); }
+
+.hero { display: flex; align-items: center; min-height: 340px; padding: 40px 32px; }
+.hero-text { max-width: 460px; }
+.hero h1 { margin: 0 0 12px; color: #fff; font-size: 2.5rem; }
+.hero .accent,
+.hero .eyebrow { color: #6FD3AE; }
+.hero p { line-height: 1.6; }
+.hero .btn-outline { color: #fff; }
+
+.cta { padding: 36px 32px; }
+.cta-text { max-width: 520px; }
+.cta h2 { margin: 0 0 8px; color: #fff; }
+.cta p { margin: 0; line-height: 1.6; }
+.cta .btn { color: var(--dark-green); background: #fff; }
+.cta .btn:hover { background: #e9f5f0; }
+.cta .btn-outline { color: #fff; }
+.page > .cta { margin-bottom: 0; }
+
+/* ----- Filter chips: real radio buttons / checkboxes, hidden and replaced by a small pill ----- */
+.chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; border: 0; min-width: 0; }
+.chip { position: relative; flex: none; }
+.chip input {
+  position: absolute;               /* invisible but still reachable with the keyboard */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.chip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 16px;
+  font-size: .9375rem;
+  font-weight: 600;
+  color: var(--text);
+  border: 1px solid var(--field-border);
+  border-radius: 999px;
+}
+.chip input:checked + span { color: #fff; background: var(--green-velo); border-color: var(--green-velo); }
+.chip input:focus-visible + span { outline: 3px solid var(--links); outline-offset: 2px; }
+
+.result-count { margin: 0; font-size: .9375rem; font-weight: 600; }
+
+/* ----- Facts: distance, time, level ----- */
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 12px 0; padding: 0; list-style: none; font-size: .9375rem; }
+.meta li { display: flex; align-items: center; gap: 6px; }
+.meta svg { width: 18px; height: 18px; flex: none; color: var(--links); }
+
+/* ----- Windows (<dialog>): the bike window ----- */
+.modal {
+  padding: 0;
+  overflow-y: auto;                 /* the window scrolls if it is taller than the screen */
+  color: var(--text);
+  background: var(--h-backg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.modal::backdrop { background: rgba(10, 20, 30, .65); }   /* the dark area around the window */
+.modal:focus-visible { outline: none; }                    /* the window itself gets the focus when it opens (see velos.js), not the ✕ button */
+
+.dialog-close {
+  position: sticky;
+  top: 12px;
+  z-index: 2;
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 12px 12px -40px auto;
+  padding: 0;
+  font-size: .75rem;
+  line-height: 1;
+  color: var(--text);
+  background: var(--h-backg);
+  border: 0;
+  border-radius: 50%;
+  opacity: .85;
+  cursor: pointer;
+}
+.dialog-close::after { content: ""; position: absolute; inset: -8px; }
+.dialog-close:hover { opacity: 1; background: var(--backg); }
+
+/* -- Form fields -- */
+.field { margin-bottom: 18px; }
+.field label { display: block; margin-bottom: 6px; font-weight: 600; }
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px;
+  font: 400 1rem Inter, Arial, sans-serif;
+  color: var(--text);
+  background: var(--backg);
+  border: 2px solid var(--field-border);
+  border-radius: 8px;
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.field input:focus-visible,
+.field textarea:focus-visible { outline: 3px solid var(--links); outline-offset: 2px; }
+
+.is-invalid { border-color: var(--error) !important; }
+.field input:user-invalid,
+.field textarea:user-invalid { border-color: var(--error); }
+.field-error { margin: 6px 0 0; color: var(--error); font-size: 1rem; font-weight: 600; }
+.field-error:empty { display: none; }
+
+/* -- Opening hours table (home and contact pages) -- */
+.hours { width: 100%; border-collapse: collapse; }
+.hours th,
+.hours td { padding: 10px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+.hours td { text-align: right; }
+.hours tr:last-child th,
+.hours tr:last-child td { border-bottom: 0; }
+
+
+/*
+Used on other pages
+ */
+.bike-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));   /* 3-4 columns on desktop */
+  gap: 32px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bike-card { position: relative; cursor: pointer; }   /* the whole card opens the detail window */
+
+.bike-media {
+  position: relative;               /* the badges sit on top of the photo */
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.bike-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;              /* keeps the space reserved while the photo loads */
+  object-fit: cover;
+  transition: transform .3s;
+}
+.bike-card:hover .bike-photo { transform: scale(1.04); }
+.bike-card.is-unavailable .bike-photo { filter: grayscale(1); }
+
+.badges { position: absolute; top: 8px; left: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+.badge { padding: 2px 10px; font-size: 1rem; font-weight: 600; border-radius: 999px; }
+
+.badge-electric { color: var(--night-blue); background: var(--yellow-sun); }
+.badge-unavailable { color: var(--h-backg); background: var(--text); }
+
+.bike-body { display: flex; flex-direction: column; gap: 10px; padding: 10px 2px 0; }
+.bike-name { margin: 0 0 -6px; font-size: 1rem; color: var(--links); }
+.bike-price { margin: 0; font-size: .875rem; line-height: 1.3; }
+.price-hour { font: 700 1.1875rem Poppins, Arial, sans-serif; color: var(--links); }
+.price-alt { display: block; font-size: .8125rem; opacity: .85; }
+.price-day { font-weight: 600; }
+
+.bike-book {
+  display: block;
+  min-height: 40px;
+  padding: 0 12px;
+  font: 600 .875rem Inter, Arial, sans-serif;
+  line-height: 38px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--links);
+  background: none;
+  border: 1px solid var(--links);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.bike-book::after { content: ""; position: absolute; inset: 0; }
+.bike-card:hover .bike-book { color: #fff; background: var(--green-velo); border-color: var(--green-velo); }
+
+@media (max-width: 700px) {
+  .bike-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }   /* two bike columns on phones */
+  .bike-name { font-size: .9375rem; }
+  .badges { top: 6px; left: 6px; }
+  .page { padding-top: 12px; }   /* catalogue closer to the banner */
+}
+
+.perks { display: grid; gap: 12px; margin: 20px 0 0; padding: 20px 0 0; list-style: none; border-top: 1px solid var(--border); }
+.perks li { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+
+.route-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--text);
+  background: var(--h-backg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.route-media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
+.route-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left center; }   /* left: keeps the caption written in the photo */
+.route-media-map { color: var(--text); background: color-mix(in srgb, var(--green-velo) 18%, var(--backg)); }   /* tinted background for the map drawing */
+.map-drawing { display: block; width: 100%; height: 100%; }
+
+.route-badge { position: absolute; top: 10px; left: 10px; padding: 2px 12px; font-size: .875rem; font-weight: 600; color: #fff; border-radius: 999px; }
+.route-badge-ville { background: #C0392B; }
+.route-badge-nature { background: var(--green-velo); }
+.route-badge-famille { background: #7A4FB5; }
+.route-badge-sportif { color: var(--night-blue); background: var(--yellow-sun); }
+
+.route-info { display: flex; flex: 1; flex-direction: column; padding: 16px; }
+.route-info h3 { margin: 0; font-size: 1.125rem; color: var(--links); }
+.route-info p { margin: 0 0 12px; font-size: .9375rem; line-height: 1.5; }
+
+.site-footer {
+  background: var(--h-backg);
+  border-top: 1px solid var(--border);
+  transition: background-color .3s, border-color .3s;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 36px 16px 28px;
+}
+.footer-name {
+  margin: 0 0 6px;
+  font: 700 1.25rem Poppins, Arial, sans-serif;
+  color: var(--text);
+}
+.site-footer p {
+  margin: 0;
+  line-height: 1.6;
+}
+.site-footer h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--text);
+}
+.site-footer ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-footer a {
+  color: var(--links);
+  font-weight: 600;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+.footer-note {
+  margin: 0;
+  padding: 16px;
+  font-size: .9375rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  opacity: .8;
+}
+
+@media (min-width: 760px) {
+  .footer-inner { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  .page h1 { font-size: 1.625rem; }
+  .page h2 { font-size: 1.5rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero { min-height: 300px; padding: 28px 20px; }
+  .cta { padding: 28px 20px; }
+  .card { padding: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rider { animation: none; }
+  body, .site-header { transition: none; }
+}

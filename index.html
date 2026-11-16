@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eric J. Kimbembe — Front-end Developer</title>
+    <meta name="description" content="Portfolio of Eric J. Kimbembe, aspiring front-end developer. Hand-coded with HTML, CSS and JavaScript.">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/theme.js"></script>
+</head>
+<body id="top">
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+        <span class="theme-toggle__dot"></span>
+    </button>
+    <nav class="headl" aria-label="Main left">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+    </nav>
+    <a href="#top" class="logo" aria-label="Back to top"><img src="images/logo.webp" alt="EJK"></a>
+    <nav class="headr" aria-label="Main right">
+        <a href="#project">Projects</a>
+        <a href="pages/contact.html">Contact</a>
+    </nav>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+    </button>
+</header>
+
+<!-- Full-screen menu (phones) -->
+<nav class="mobile-menu" aria-label="Mobile">
+    <a href="index.html"><small>01</small>Home</a>
+    <a href="#about"><small>02</small>About</a>
+    <a href="#project"><small>03</small>Projects</a>
+    <a href="#skills"><small>04</small>Toolkit</a>
+    <a href="pages/contact.html"><small>05</small>Contact</a>
+</nav>
+
+<main>
+    <!-- ============ BANNER ============ -->
+    <section id="banner">
+        <div class="bantxt">
+            <h3 class="eyebrow"><span class="wave">👋</span> Hey! I am</h3>
+            <h1>
+                <span class="line"><span>Eric J.</span></span>
+                <span class="line"><span>Kimbembe</span></span>
+            </h1>
+            <h2>Aspiring <em>front-end</em> developer</h2>
+            <p class="lead">I build clean, responsive web pages by hand — and I care about the small details that make them feel alive.</p>
+            <div class="buttons">
+                <a href="#project" class="button1 magnetic">See my work <span aria-hidden="true">↓</span></a>
+                <a href="pages/contact.html" class="button1 button1--ghost magnetic">Contact me <span aria-hidden="true">→</span></a>
+            </div>
+        </div>
+        <div class="banimg" data-parallax>
+            <span class="blob blob--1" data-depth="18"></span>
+            <span class="blob blob--2" data-depth="-12"></span>
+            <img src="images/ban.webp" alt="Illustration of a developer coding on a laptop" data-depth="8" width="1100" height="1000">
+            <!-- Spinning text badge -->
+            <svg class="badge" viewBox="0 0 200 200" aria-hidden="true" data-depth="-22">
+                <defs><path id="circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+                <circle cx="100" cy="100" r="98"/>
+                <text><textPath href="#circle">HTML · CSS · JAVASCRIPT · FRONT-END IN THE MAKING · </textPath></text>
+                <text class="badge__star" x="100" y="118" text-anchor="middle">✦</text>
+            </svg>
+        </div>
+        <a href="#about" class="scroll-hint" aria-label="Scroll to About"><span></span>Scroll</a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+            <span>HTML</span><i>✦</i><span class="alt">CSS</span><i>✦</i><span>Flexbox</span><i>✦</i><span class="alt">Grid</span><i>✦</i><span>JavaScript</span><i>✦</i><span class="alt">Responsive design</span><i>✦</i><span>Animation</span><i>✦</i>
+            <span>HTML</span><i>✦</i><span class="alt">CSS</span><i>✦</i><span>Flexbox</span><i>✦</i><span class="alt">Grid</span><i>✦</i><span>JavaScript</span><i>✦</i><span class="alt">Responsive design</span><i>✦</i><span>Animation</span><i>✦</i>
+        </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+        <div class="abimg" data-reveal="left">
+            <img src="images/moi01.webp" alt="Illustration of Eric" width="900" height="991" loading="lazy">
+        </div>
+        <div class="abtxt" data-reveal>
+            <p class="eyebrow">01 — About</p>
+            <h2 class="h2aft">The part of the web <em>you can see</em> is my favourite part.</h2>
+            <!-- EDIT ME: this text is based on your CV — adjust it in your own words -->
+            <p>I'm Eric, a first-year web development student at Need for School in Rouen. I came to code through graphic design, so I care as much about how a page looks and feels as about how it is built.</p>
+            <p>I build responsive sites by hand in HTML, CSS and JavaScript, with no framework. I speak English and Swahili fluently and I'm learning French. I'm looking for a work-study position or an internship in front-end development.</p>
+            <ul class="values">
+                <li><strong>Structure</strong><span>Semantic, readable HTML</span></li>
+                <li><strong>Layout</strong><span>Flexbox &amp; Grid that adapt to any screen</span></li>
+                <li><strong>Motion</strong><span>Small animations with a purpose</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="project">
+        <p class="eyebrow" data-reveal>02 — Work</p>
+        <h2 data-reveal>My <span>Projects</span></h2>
+        <h3 data-reveal>What I've built so far, in code and in design.</h3>
+        <div class="cards">
+            <article class="card" data-reveal data-tilt>
+                <div class="cover">
+                    <img class="shot-light" src="images/projects/velo-home-light.webp" alt="Home page of the Rouen à Vélo website" loading="lazy">
+                    <img class="shot-dark" src="images/projects/velo-home-dark.webp" alt="Home page of the Rouen à Vélo website, dark mode" loading="lazy">
+                </div>
+                <div class="card__body">
+                    <span class="card__num">01</span>
+                    <h3><a href="pages/rouen-a-velo.html" class="card__link">Rouen à Vélo</a></h3>
+                    <p>A five-page website for a bike rental and repair workshop: searchable catalogue, booking with live price, dark mode.</p>
+                    <p class="par"><span>HTML</span><span>CSS</span><span>JavaScript</span></p>
+                    <p class="card__more">View project <span aria-hidden="true">→</span></p>
+                </div>
+            </article>
+            <article class="card" data-reveal data-tilt>
+                <div class="cover cover--site">
+                    <div class="mini">
+                        <div class="mini__bar"><i></i><i></i><i></i></div>
+                        <div class="mini__body">
+                            <b></b><b></b><u></u>
+                            <div class="mini__art"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__body">
+                    <span class="card__num">02</span>
+                    <h3>This portfolio</h3>
+                    <p>A responsive, animated portfolio written from scratch, with a light and dark theme.</p>
+                    <p class="par"><span>HTML</span><span>CSS</span><span>JavaScript</span></p>
+                </div>
+            </article>
+            <!-- EDIT ME: to show your design work, put an image inside the cover:
+                 <div class="cover"><img src="images/projects/your-visual.jpg" alt="..."></div> -->
+            <article class="card" data-reveal data-tilt>
+                <div class="cover cover--rings"><span class="cover__label">Graphic design</span></div>
+                <div class="card__body">
+                    <span class="card__num">03</span>
+                    <h3>Visuals for a client</h3>
+                    <p>Social media visuals and posters, designed to order for a client.</p>
+                    <p class="par"><span>Photoshop</span><span>Illustrator</span><span>Canva</span></p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills">
+        <div>
+            <p class="eyebrow" data-reveal>03 — Toolkit</p>
+            <h2 class="h2aft" data-reveal>What I <em>work with</em></h2>
+            <ul class="rows">
+                <li data-reveal><span class="rows__n">01</span><strong>HTML</strong><span class="rows__d">Semantic structure, forms, accessibility basics</span></li>
+                <li data-reveal><span class="rows__n">02</span><strong>CSS</strong><span class="rows__d">Custom properties, transitions, animations</span></li>
+                <li data-reveal><span class="rows__n">03</span><strong>Flexbox</strong><span class="rows__d">Alignment and one-dimensional layouts</span></li>
+                <li data-reveal><span class="rows__n">04</span><strong>Grid</strong><span class="rows__d">Two-dimensional, responsive page layouts</span></li>
+                <li data-reveal><span class="rows__n">05</span><strong>JavaScript</strong><span class="rows__d">DOM, events and interactions like the ones on this page</span></li>
+                <li data-reveal><span class="rows__n">06</span><strong>Design</strong><span class="rows__d">Photoshop, Illustrator and Canva for visuals and posters</span></li>
+            </ul>
+        </div>
+        <aside data-reveal="right">
+            <h3>Next on my list</h3>
+            <!-- EDIT ME: what you want to learn next -->
+            <ul>
+                <li>Going deeper into JavaScript</li>
+                <li>Git &amp; GitHub</li>
+                <li>Putting a site online</li>
+            </ul>
+            <p class="aside__note">Always learning <span aria-hidden="true">✦</span></p>
+        </aside>
+    </section>
+</main>
+
+<a href="#top" class="to-top" aria-label="Back to top">&uarr;</a>
+
+<footer>
+    <div class="cta">
+        <p class="eyebrow">Got a project, an internship or a question?</p>
+        <a href="pages/contact.html" class="cta__link">Let's <em>talk</em> <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="footrow">
+        <p>© 2026 Eric Jonathan Kimbembe</p>
+        <p>Hand-coded with HTML, CSS &amp; JS</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
