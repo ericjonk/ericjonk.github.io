@@ -46,7 +46,8 @@ function onScroll() {
     const max = root.scrollHeight - window.innerHeight;
     progress.style.transform = "scaleX(" + (max > 0 ? window.scrollY / max : 0) + ")";
     document.body.classList.toggle("scrolled", window.scrollY > 20);
-    if (toTop) toTop.classList.toggle("show", window.scrollY > 500);
+    // shown after scrolling a bit; hidden again at the very bottom so it never covers the footer text
+    if (toTop) toTop.classList.toggle("show", window.scrollY > 500 && window.scrollY < max - 60);
 }
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
@@ -69,16 +70,18 @@ document.querySelectorAll("[data-reveal]").forEach((el) => {
 
 /* ---------- 6. Mouse effects (computers only) ---------- */
 if (window.matchMedia("(hover: hover) and (pointer: fine)").matches && !reduceMotion) {
-    /* hero illustration follows the mouse a little (home page) */
+    /* hero illustration follows the mouse a little (home page only) */
     const layers = document.querySelectorAll("[data-depth]");
-    window.addEventListener("mousemove", (e) => {
-        const dx = e.clientX / window.innerWidth - 0.5;
-        const dy = e.clientY / window.innerHeight - 0.5;
-        layers.forEach((layer) => {
-            layer.style.setProperty("--px", dx * layer.dataset.depth + "px");
-            layer.style.setProperty("--py", dy * layer.dataset.depth + "px");
+    if (layers.length) {
+        window.addEventListener("mousemove", (e) => {
+            const dx = e.clientX / window.innerWidth - 0.5;
+            const dy = e.clientY / window.innerHeight - 0.5;
+            layers.forEach((layer) => {
+                layer.style.setProperty("--px", dx * layer.dataset.depth + "px");
+                layer.style.setProperty("--py", dy * layer.dataset.depth + "px");
+            });
         });
-    });
+    }
 
     /* cards tilt towards the mouse */
     document.querySelectorAll("[data-tilt]").forEach((card) => {

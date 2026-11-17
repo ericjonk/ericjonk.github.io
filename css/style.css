@@ -2,28 +2,28 @@
 GLOBAL SETTINGS
  */
 :root {
-    /* brand palette (unchanged) */
-    --head: #A3D8A3;
-    --a: #4A7E4A;
-    --b: #0C3B0C;
-    --c: #1A1A1A;
-    --d: #D0E0D0;
+    /* brand palette */
+    --mint: #A3D8A3;
+    --green: #4A7E4A;
+    --forest: #0C3B0C;
+    --ink: #1A1A1A;
+    --sage: #D0E0D0;
 
     /* roles — these change between light and dark theme */
     --bg: #FBFDF9;
     --text: #1A1A1A;
     --muted: #4C5E4C;
-    --brand-bg: var(--head);    /* header, hero and the "next on my list" note */
+    --brand-bg: var(--mint);    /* header, hero and the "next on my list" note */
     --brand-text: #10200F;
-    --band: var(--d);
-    --card: var(--a);
+    --band: var(--sage);
+    --card: var(--green);
     --line: rgba(12, 59, 12, 0.18);
-    --accent: var(--b);
-    --soft: var(--a);       /* italic words and small labels */
+    --accent: var(--forest);
+    --soft: var(--green);       /* italic words and small labels */
     --error: #B3261E;
     --btn-bg: #111;
     --btn-text: #fff;
-    --foot: var(--c);
+    --foot: var(--ink);
 
     --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
     --serif: "Instrument Serif", Georgia, serif;
@@ -42,10 +42,10 @@ GLOBAL SETTINGS
     --band: #172117;
     --card: #2B522B;
     --line: rgba(163, 216, 163, 0.2);
-    --accent: var(--head);
-    --soft: var(--head);
+    --accent: var(--mint);
+    --soft: var(--mint);
     --error: #FF9B93;
-    --btn-bg: var(--head);
+    --btn-bg: var(--mint);
     --btn-text: #0E1F0E;
     --foot: #0A0D0A;
 }
@@ -58,7 +58,6 @@ html {
 }
 body {
     margin: 0;
-    padding: 0;
     font-family: var(--display);
     font-size: 1.05rem;
     line-height: 1.65;
@@ -87,8 +86,8 @@ em {
     letter-spacing: 0;
 }
 ::selection {
-    background: var(--b);
-    color: var(--head);
+    background: var(--forest);
+    color: var(--mint);
 }
 :focus-visible {
     outline: 2px solid var(--accent);
@@ -151,7 +150,9 @@ header {
     transform-origin: right;
     transition: transform 0.4s var(--ease);
 }
-.headl a:hover::after, .headr a:hover::after, .is-active::after {
+/* shown on hover, and on the link of the page you are on */
+.headl a:hover::after, .headr a:hover::after,
+.headl [aria-current]::after, .headr [aria-current]::after {
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -168,14 +169,14 @@ header {
     margin-bottom: -50px;
     transition: background 0.4s;
 }
-/* dark theme: swap to the light version of the logo */
-.dark .logo img {
-    content: url("../images/logo-light.webp");
-}
 .logo img {
     height: 70px;
     width: auto;
     display: block;
+}
+/* dark theme: swap to the light version of the logo */
+.dark .logo img {
+    content: url("../images/logo-light.webp");
 }
 .theme-toggle {
     position: absolute;
@@ -218,10 +219,8 @@ header {
 .dark .theme-toggle__dot::after {
     transform: none;
 }
-.burger {
-    display: none;
-}
-.mobile-menu {
+/* phones only: see the RESPONSIVE section */
+.burger, .mobile-menu {
     display: none;
 }
 .progress {
@@ -261,7 +260,7 @@ footer {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 .cta .eyebrow {
-    color: var(--head);
+    color: var(--mint);
 }
 .cta__link {
     display: inline-block;
@@ -274,7 +273,7 @@ footer {
     transition: color 0.3s;
 }
 .cta__link em {
-    color: var(--head);
+    color: var(--mint);
 }
 .cta__link span {
     display: inline-block;
@@ -282,7 +281,7 @@ footer {
     transition: transform 0.5s var(--ease);
 }
 .cta__link:hover {
-    color: var(--head);
+    color: var(--mint);
 }
 .cta__link:hover span {
     transform: translateX(0.25em) rotate(-45deg);
@@ -350,10 +349,11 @@ MAIN:BANNER
     font-size: 1.1rem;
     opacity: 0.85;
 }
-#banner .eyebrow, #banner h2, #banner .lead, .buttons {
+/* text that fades in when a page opens */
+#banner .eyebrow, #banner h2, .lead, .buttons {
     animation: fade-up 0.9s 0.45s var(--ease) both;
 }
-#banner .lead {
+.lead {
     animation-delay: 0.55s;
 }
 .buttons {
@@ -383,7 +383,7 @@ MAIN:BANNER
     width: 44%;
     aspect-ratio: 1;
     top: -8%; right: -6%;
-    background: var(--a);
+    background: var(--green);
     opacity: 0.28;
     border-radius: 58% 42% 55% 45% / 50% 60% 40% 50%;
     animation: morph 12s ease-in-out infinite;
@@ -404,10 +404,10 @@ MAIN:BANNER
     animation: spin 22s linear infinite;
 }
 .badge circle {
-    fill: var(--c);
+    fill: var(--ink);
 }
 .badge text {
-    fill: var(--head);
+    fill: var(--mint);
     font-family: var(--mono);
     font-size: 13.4px;
     letter-spacing: 0.1em;
@@ -477,8 +477,8 @@ MAIN:BANNER
 MARQUEE
  */
 .marquee {
-    background: var(--c);
-    color: var(--head);
+    background: var(--ink);
+    color: var(--mint);
     overflow: hidden;
     padding: 18px 0;
     transform: rotate(-1.2deg) scale(1.03);
@@ -512,7 +512,7 @@ MARQUEE
 .marquee i {
     font-style: normal;
     font-size: 0.6em;
-    color: var(--a);
+    color: var(--green);
 }
 /*
 MAIN:ABOUT
@@ -603,13 +603,17 @@ MAIN:PROJECT
     letter-spacing: -0.02em;
     color: var(--soft);
 }
-#project > h3 {
+/* darker than the other labels: this one sits on a green background */
+#project .eyebrow {
+    color: var(--accent);
+}
+.intro {
     margin: 1.2rem auto 4rem;
     max-width: 40ch;
     font-size: 1.15rem;
-    font-weight: 400;
     line-height: 1.5;
     color: var(--muted);
+    text-wrap: balance;
 }
 .cards {
     display: grid;
@@ -635,7 +639,7 @@ MAIN:PROJECT
     place-items: center;
     height: 250px;
     overflow: hidden;
-    background: var(--head);
+    background: var(--mint);
 }
 .cover img {
     width: 100%;
@@ -658,10 +662,11 @@ MAIN:PROJECT
     font-style: italic;
     font-size: 2.6rem;
     line-height: 1;
-    color: var(--head);
+    color: var(--mint);
     opacity: 0.55;
 }
 .card h3 {
+    padding-right: 3rem;    /* room for the big number in the corner */
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -670,21 +675,19 @@ MAIN:PROJECT
     margin: 0.6rem 0 0;
     font-size: 0.95rem;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
 }
-.par {
+.tags {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
 }
-.card .par {
+.card .tags {
     margin-top: 1.1rem;
 }
-.par span {
+.tags span {
     font: 500 0.7rem var(--mono);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: white;
     padding: 4px 10px;
     border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 99px;
@@ -692,15 +695,16 @@ MAIN:PROJECT
 /* cover 2: a tiny drawing of this website, made only with CSS */
 .mini {
     width: 74%;
+    max-width: 300px;
     border-radius: 10px;
     overflow: hidden;
-    background: var(--head);
-    border: 2px solid var(--c);
-    box-shadow: 8px 8px 0 var(--b);
+    background: var(--mint);
+    border: 2px solid var(--ink);
+    box-shadow: 8px 8px 0 var(--forest);
     transition: transform 0.6s var(--ease);
 }
 .cover--site {
-    background: var(--d);
+    background: var(--sage);
 }
 .card:hover .mini {
     transform: translateY(-6px) rotate(-2deg) scale(1.04);
@@ -709,13 +713,13 @@ MAIN:PROJECT
     display: flex;
     gap: 5px;
     padding: 7px 9px;
-    background: var(--c);
+    background: var(--ink);
 }
-.mini__bar i {
+.mini__bar span {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--head);
+    background: var(--mint);
 }
 .mini__body {
     position: relative;
@@ -723,23 +727,21 @@ MAIN:PROJECT
     gap: 7px;
     padding: 18px 16px 22px;
 }
-.mini__body b {
-    display: block;
+.mini__line {
     height: 13px;
     width: 46%;
     border-radius: 3px;
-    background: var(--c);
+    background: var(--ink);
 }
-.mini__body b + b {
+.mini__line + .mini__line {
     width: 58%;
 }
-.mini__body u {
-    display: block;
+.mini__button {
     height: 12px;
     width: 26%;
     margin-top: 6px;
     border-radius: 99px;
-    background: var(--b);
+    background: var(--forest);
 }
 .mini__art {
     position: absolute;
@@ -747,20 +749,20 @@ MAIN:PROJECT
     width: 26%;
     aspect-ratio: 1;
     border-radius: 58% 42% 55% 45% / 50% 60% 40% 50%;
-    background: var(--a);
+    background: var(--green);
 }
 /* cover 3: rings */
 .cover--rings {
     background:
         repeating-radial-gradient(circle at 30% 120%, transparent 0 22px, rgba(12, 59, 12, 0.28) 22px 24px),
-        var(--head);
+        var(--mint);
 }
 .cover__label {
     font: 500 0.75rem var(--mono);
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--head);
-    background: var(--c);
+    color: var(--mint);
+    background: var(--ink);
     padding: 8px 16px;
     border-radius: 99px;
 }
@@ -768,7 +770,8 @@ MAIN:PROJECT
     color: inherit;
     text-decoration: none;
 }
-/* makes the whole card clickable */
+/* makes the whole card clickable: an invisible layer that also
+   covers the 250px cover above the text */
 .card__link::after {
     content: "";
     position: absolute;
@@ -776,8 +779,10 @@ MAIN:PROJECT
 }
 .card .card__more {
     font-weight: 600;
-    color: var(--head);
     margin-top: 1rem;
+}
+.dark .card__more {
+    color: var(--mint);
 }
 .card__more span {
     display: inline-block;
@@ -806,6 +811,7 @@ MAIN:SKILLS
 }
 .rows li {
     position: relative;
+    z-index: 0;     /* keeps the hover layer below (z-index: -1) inside the row */
     display: grid;
     grid-template-columns: 3.2rem minmax(8rem, 0.8fr) 1.6fr;
     align-items: baseline;
@@ -821,7 +827,7 @@ MAIN:SKILLS
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: var(--a);
+    background: var(--green);
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 0.45s var(--ease);
@@ -833,7 +839,7 @@ MAIN:SKILLS
 .rows li:hover::before {
     transform: scaleY(1);
 }
-.rows__n {
+.rows__num {
     font: 500 0.8rem var(--mono);
     opacity: 0.6;
 }
@@ -843,12 +849,12 @@ MAIN:SKILLS
     letter-spacing: -0.03em;
     line-height: 1.1;
 }
-.rows__d {
+.rows__text {
     color: var(--muted);
     font-size: 0.98rem;
     transition: color 0.35s;
 }
-.rows li:hover .rows__d {
+.rows li:hover .rows__text {
     color: rgba(255, 255, 255, 0.9);
 }
 aside {
@@ -910,7 +916,7 @@ MAIN
     gap: 3rem;
     padding: 8rem 4rem 6rem;
     color: white;
-    background: var(--c);
+    background: var(--ink);
 }
 .contactl h1 {
     font-size: clamp(2.6rem, 5.4vw, 5rem);
@@ -919,10 +925,7 @@ MAIN
     line-height: 1;
 }
 .contactl h1 em, .contactl .eyebrow {
-    color: var(--head);
-}
-.contactl .lead {
-    animation: fade-up 0.9s 0.45s var(--ease) both;
+    color: var(--mint);
 }
 .contactr {
     background: var(--band);
@@ -985,7 +988,7 @@ input, select, textarea {
     margin-top: 0.4rem;
     padding: 0.6rem 0;
     border: none;
-    border-bottom: 1px solid var(--a);
+    border-bottom: 1px solid var(--green);
     border-radius: 0;
     background: transparent;
     color: var(--text);
@@ -1039,7 +1042,7 @@ textarea {
     flex: none;
     margin: 0;
     padding: 0;
-    accent-color: var(--b);
+    accent-color: var(--accent);
     cursor: pointer;
 }
 form .button1 {
@@ -1056,8 +1059,8 @@ form .button1 {
 .form-note.is-ok {
     padding: 0.9rem 1.1rem;
     border-radius: 12px;
-    background: var(--b);
-    color: var(--head);
+    background: var(--forest);
+    color: var(--mint);
     animation: fade-up 0.5s var(--ease);
 }
 .form-note.is-error {
@@ -1075,7 +1078,7 @@ PROJECT PAGE
     margin: 0 auto;
     padding: 0 2rem;
 }
-.phero {
+.project-hero {
     padding: 110px 0 60px;
 }
 .back {
@@ -1090,23 +1093,19 @@ PROJECT PAGE
 .back:hover {
     color: var(--accent);
 }
-.phero h1 {
+.project-hero h1 {
     font-size: clamp(3.4rem, 11vw, 9.5rem);
     font-weight: 800;
     letter-spacing: -0.045em;
     line-height: 0.9;
 }
-.phero h1 em {
+.project-hero h1 em {
     color: var(--soft);
     letter-spacing: -0.02em;
 }
-.phero .lead {
+.project-hero .lead {
     max-width: 48ch;
     font-size: 1.25rem;
-    animation: fade-up 0.9s 0.45s var(--ease) both;
-}
-.phero .buttons {
-    animation: fade-up 0.9s 0.55s var(--ease) both;
 }
 .facts {
     display: grid;
@@ -1139,25 +1138,25 @@ PROJECT PAGE
 }
 /* screenshot inside a little browser window */
 .browser {
-    border: 2px solid var(--c);
+    border: 2px solid var(--ink);
     border-radius: 14px;
     overflow: hidden;
-    background: var(--c);
-    box-shadow: 12px 12px 0 var(--a);
+    background: var(--ink);
+    box-shadow: 12px 12px 0 var(--green);
 }
 .dark .browser {
-    border-color: var(--a);
+    border-color: var(--green);
 }
 .browser__bar {
     display: flex;
     gap: 6px;
     padding: 10px 12px;
 }
-.browser__bar i {
+.browser__bar span {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--head);
+    background: var(--mint);
 }
 /* Every screenshot exists twice: the light one shows on the light theme,
    the dark one on the dark theme. */
@@ -1212,21 +1211,21 @@ PROJECT PAGE
     background: var(--btn-bg);
     color: var(--btn-text);
 }
-.pblock {
+.project-block {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: clamp(2rem, 6vw, 6rem);
     padding: 130px 0 0;
 }
-.pblock--stack {
+.project-block--stack {
     grid-template-columns: 1fr;
     gap: 1rem;
 }
-.pblock__text {
+.project-block__text {
     padding-top: 2.6rem;
     color: var(--muted);
 }
-.pblock__text p {
+.project-block__text p {
     margin: 0 0 1.2rem;
 }
 .gallery {
@@ -1254,26 +1253,26 @@ PROJECT PAGE
 .phone {
     flex: 0 1 240px;
     min-width: 0;
-    border: 8px solid var(--c);
+    border: 8px solid var(--ink);
     border-radius: 34px;
     overflow: hidden;
     box-shadow: 0 30px 50px -24px rgba(12, 59, 12, 0.6);
 }
 /* dark theme: a lighter green behind the phones, so their black frames stand out */
 .dark .shot--phones {
-    background: var(--a);
+    background: var(--green);
 }
 .dark .shot--phones figcaption {
     color: white;
 }
-.pnext {
+.project-nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 1rem;
     padding: 110px 0 120px;
 }
-.pnext .button1 {
+.project-nav .button1 {
     margin: 0;
 }
 /*
@@ -1300,8 +1299,8 @@ ANIMATIONS AND STUFF
     display: grid;
     place-items: center;
     border-radius: 50%;
-    background: var(--head);
-    color: var(--c);
+    background: var(--mint);
+    color: var(--ink);
     font-size: 1.4rem;
     text-decoration: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
@@ -1341,11 +1340,9 @@ ANIMATIONS AND STUFF
 }
 @keyframes rise {
     from { transform: translateY(110%); }
-    to { transform: none; }
 }
 @keyframes fade-up {
     from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: none; }
 }
 @keyframes spin {
     to { transform: rotate(360deg); }
@@ -1519,7 +1516,7 @@ RESPONSIVE
     .rows li {
         grid-template-columns: 2.4rem 1fr;
     }
-    .rows__d {
+    .rows__text {
         grid-column: 2;
     }
     .cta {
@@ -1534,20 +1531,20 @@ RESPONSIVE
     .project {
         padding: 0 1.4rem;
     }
-    .phero {
+    .project-hero {
         padding: 90px 0 40px;
     }
     .facts {
         grid-template-columns: 1fr 1fr;
     }
     .browser {
-        box-shadow: 7px 7px 0 var(--a);
+        box-shadow: 7px 7px 0 var(--green);
     }
-    .pblock, .gallery {
+    .project-block, .gallery {
         grid-template-columns: 1fr;
         padding-top: 90px;
     }
-    .pblock__text {
+    .project-block__text {
         padding-top: 0;
     }
     .shot--phones {
@@ -1563,7 +1560,7 @@ RESPONSIVE
         border-width: 4px;
         border-radius: 16px;
     }
-    .pnext {
+    .project-nav {
         padding: 80px 0 90px;
     }
     .contactl, .contactr {

@@ -25,7 +25,7 @@
     </nav>
     <a href="../index.html" class="logo" aria-label="Home"><img src="../images/logo.webp" alt="EJK"></a>
     <nav class="headr" aria-label="Main right">
-        <a href="../index.html#project" class="is-active">Projects</a>
+        <a href="../index.html#project" aria-current="true">Projects</a>
         <a href="contact.html">Contact</a>
     </nav>
     <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
@@ -42,7 +42,7 @@
 </nav>
 
 <main class="project">
-    <section class="phero">
+    <section class="project-hero">
         <a href="../index.html#project" class="back"><span aria-hidden="true">←</span> All projects</a>
         <p class="eyebrow">School project · 2026</p>
         <h1>
@@ -69,41 +69,41 @@
     </div>
     <figure class="shot" data-reveal>
         <div class="browser">
-            <div class="browser__bar"><i></i><i></i><i></i></div>
+            <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span></div>
             <img class="shot-light" src="../images/projects/velo-home-light.webp" alt="Home page of Rouen à Vélo with an illustrated view of the Seine" width="1600" height="900">
-                <img class="shot-dark" src="../images/projects/velo-home-dark.webp" alt="Home page of Rouen à Vélo with an illustrated view of the Seine, dark mode" width="1600" height="900">
+            <img class="shot-dark" src="../images/projects/velo-home-dark.webp" alt="Home page of Rouen à Vélo with an illustrated view of the Seine, dark mode" width="1600" height="900">
         </div>
     </figure>
 
-    <section class="pblock">
+    <section class="project-block">
         <div data-reveal>
             <p class="eyebrow">The brief</p>
             <h2 class="h2aft">A client who was <em>losing customers</em></h2>
         </div>
-        <div class="pblock__text" data-reveal>
+        <div class="project-block__text" data-reveal>
             <p>The (fictional) client runs a small bike workshop in Rouen and had no website. Her customers are tourists and locals searching on their phone, and they kept asking the same two questions: is this bike available, and how much will it cost?</p>
             <p>The site had to answer both before they came to the shop, present the workshop and its prices, and be pleasant on a small screen. The rules: HTML, CSS and JavaScript only, with no library or framework.</p>
         </div>
     </section>
 
-    <section class="pblock pblock--stack">
+    <section class="project-block project-block--stack">
         <div data-reveal>
             <p class="eyebrow">What I built</p>
             <h2 class="h2aft">From a data file to a <em>booking</em></h2>
         </div>
         <ul class="rows">
-            <li data-reveal><span class="rows__n">01</span><strong>Catalogue</strong><span class="rows__d">The ten bikes are generated from a JavaScript data file, with search, category filters and sorting by price</span></li>
-            <li data-reveal><span class="rows__n">02</span><strong>Booking</strong><span class="rows__d">A dialog computes the exact price live: duration, helmet, lock or child seat, and 10% off from three days</span></li>
-            <li data-reveal><span class="rows__n">03</span><strong>Dark mode</strong><span class="rows__d">A toggle that remembers the choice, and switches to dark by itself in the evening</span></li>
-            <li data-reveal><span class="rows__n">04</span><strong>Mobile first</strong><span class="rows__d">Responsive layout with a hamburger menu that still works if JavaScript is off</span></li>
-            <li data-reveal><span class="rows__n">05</span><strong>Content</strong><span class="rows__d">Repair prices, team, FAQ, six rides, opening hours, a contact form and a map</span></li>
+            <li data-reveal><span class="rows__num">01</span><strong>Catalogue</strong><span class="rows__text">The ten bikes are generated from a JavaScript data file, with search, category filters and sorting by price</span></li>
+            <li data-reveal><span class="rows__num">02</span><strong>Booking</strong><span class="rows__text">A dialog computes the exact price live: duration, helmet, lock or child seat, and 10% off from three days</span></li>
+            <li data-reveal><span class="rows__num">03</span><strong>Dark mode</strong><span class="rows__text">A toggle that remembers the choice, and switches to dark by itself in the evening</span></li>
+            <li data-reveal><span class="rows__num">04</span><strong>Mobile first</strong><span class="rows__text">Responsive layout with a hamburger menu that still works if JavaScript is off</span></li>
+            <li data-reveal><span class="rows__num">05</span><strong>Content</strong><span class="rows__text">Repair prices, team, FAQ, six rides, opening hours, a contact form and a map</span></li>
         </ul>
     </section>
 
-    <section class="gallery">
+    <div class="gallery">
         <figure class="shot" data-reveal>
             <div class="browser">
-                <div class="browser__bar"><i></i><i></i><i></i></div>
+                <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span></div>
                 <img class="shot-light" src="../images/projects/velo-velos-light.webp" alt="Bike catalogue with search, filters and sorting" loading="lazy" width="1600" height="900">
                 <img class="shot-dark" src="../images/projects/velo-velos-dark.webp" alt="Bike catalogue with search, filters and sorting, dark mode" loading="lazy" width="1600" height="900">
             </div>
@@ -111,7 +111,7 @@
         </figure>
         <figure class="shot" data-reveal>
             <div class="browser">
-                <div class="browser__bar"><i></i><i></i><i></i></div>
+                <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span></div>
                 <img class="shot-light" src="../images/projects/velo-dialog-light.webp" alt="Booking dialog showing options and the total price" loading="lazy" width="1600" height="900">
                 <img class="shot-dark" src="../images/projects/velo-dialog-dark.webp" alt="Booking dialog showing options and the total price, dark mode" loading="lazy" width="1600" height="900">
             </div>
@@ -132,12 +132,12 @@
             </div>
             <figcaption>Home, bikes and contact on a phone</figcaption>
         </figure>
-    </section>
+    </div>
 
-    <section class="pnext" data-reveal>
+    <div class="project-nav" data-reveal>
         <a href="../index.html#project" class="button1 button1--ghost magnetic"><span aria-hidden="true">←</span> Back to projects</a>
         <a href="contact.html" class="button1 magnetic">Contact me <span aria-hidden="true">→</span></a>
-    </section>
+    </div>
 </main>
 
 <a href="#top" class="to-top" aria-label="Back to top">&uarr;</a>
