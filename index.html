@@ -47,16 +47,17 @@
     <!-- ============ BANNER ============ -->
     <section id="banner">
         <div class="bantxt">
-            <p class="eyebrow"><span class="wave">👋</span> <span data-i18n="home.hello">Hey! I am</span></p>
+            <p class="eyebrow"><span class="wave" aria-hidden="true">👋</span> <span data-i18n="home.hello">Hey! I am</span></p>
             <h1>
                 <span class="line"><span>Eric J.</span></span>
                 <span class="line"><span>Kimbembe</span></span>
             </h1>
-            <h2 data-i18n="home.role">Aspiring <em>front-end</em> developer</h2>
-            <p class="lead" data-i18n="home.lead">I build clean, responsive web pages by hand — and I care about the small details that make them feel alive.</p>
+            <p class="role" data-i18n="home.role">Front-end developer · Rouen</p>
+            <p class="tagline" data-i18n="home.tagline">From <em>imagination</em><br>to interaction.</p>
+            <p class="lead" data-i18n="home.lead">I turn creative ideas into thoughtful, responsive web experiences through design and code.</p>
             <div class="buttons">
-                <a href="#project" class="button1 magnetic" data-i18n="home.seeWork">See my work <span aria-hidden="true">↓</span></a>
-                <a href="pages/contact.html" class="button1 button1--ghost magnetic" data-i18n="btn.contact">Contact me <span aria-hidden="true">→</span></a>
+                <a href="#project" class="button1 magnetic" data-i18n="home.seeWork">Explore my work <span aria-hidden="true">↓</span></a>
+                <a href="pages/contact.html" class="button1 button1--ghost magnetic" data-i18n="home.getInTouch">Get in touch <span aria-hidden="true">→</span></a>
             </div>
         </div>
         <div class="banimg">
@@ -136,7 +137,7 @@
     <section id="project">
         <p class="eyebrow" data-reveal data-i18n="projects.eyebrow">02 — Work</p>
         <h2 data-reveal data-i18n="projects.title">My <span>Projects</span></h2>
-        <p class="intro" data-reveal data-i18n="projects.intro">What I've built so far, in code and in design.</p>
+        <p class="intro" data-reveal data-i18n="projects.intro">What I've built so far, and what's coming next.</p>
         <div class="cards">
             <article class="card" data-reveal data-tilt>
                 <div class="cover">
@@ -164,15 +165,13 @@
                     <p class="card__more" data-i18n="card.more">View project <span aria-hidden="true">→</span></p>
                 </div>
             </article>
-            <!-- EDIT ME: to show your design work, put an image inside the cover:
-                 <div class="cover"><img src="images/projects/your-visual.jpg" alt="..."></div> -->
+            <!-- placeholder for the next project: when it's ready, copy card 02 and change its text, images and link -->
             <article class="card" data-reveal data-tilt>
-                <div class="cover cover--rings"><span class="cover__label" data-i18n="card.design.label">Graphic design</span></div>
+                <div class="cover cover--rings"><span class="cover__label" data-i18n="card.soon.label">Coming soon</span></div>
                 <div class="card__body">
                     <span class="card__num" aria-hidden="true">03</span>
-                    <h3 data-i18n="card.design.title">Visuals for a client</h3>
-                    <p data-i18n="card.design.text">Social media visuals and posters, designed to order for a client.</p>
-                    <p class="tags"><span>Photoshop</span><span>Illustrator</span><span>Canva</span></p>
+                    <h3 data-i18n="card.soon.title">More to come</h3>
+                    <p data-i18n="card.soon.text">New projects are on the way. This space will grow as I learn.</p>
                 </div>
             </article>
         </div>
@@ -184,21 +183,23 @@
             <p class="eyebrow" data-reveal data-i18n="skills.eyebrow">03 — Toolkit</p>
             <h2 class="h2aft" data-reveal data-i18n="skills.title">What I <em>work with</em></h2>
             <ul class="rows">
-                <li data-reveal><span class="rows__num">01</span><strong>HTML</strong><span class="rows__text" data-i18n="skills.html">Semantic structure, forms, accessibility basics</span></li>
-                <li data-reveal><span class="rows__num">02</span><strong>CSS</strong><span class="rows__text" data-i18n="skills.css">Custom properties, transitions, animations</span></li>
-                <li data-reveal><span class="rows__num">03</span><strong>Flexbox</strong><span class="rows__text" data-i18n="skills.flexbox">Alignment and one-dimensional layouts</span></li>
-                <li data-reveal><span class="rows__num">04</span><strong>Grid</strong><span class="rows__text" data-i18n="skills.grid">Two-dimensional, responsive page layouts</span></li>
-                <li data-reveal><span class="rows__num">05</span><strong>JavaScript</strong><span class="rows__text" data-i18n="skills.js">DOM, events and interactions like the ones on this page</span></li>
-                <li data-reveal><span class="rows__num">06</span><strong data-i18n="skills.designName">Design</strong><span class="rows__text" data-i18n="skills.design">Photoshop, Illustrator and Canva for visuals and posters</span></li>
+                <!-- each row is a group; the skills are the small pills (.rows__tags) -->
+                <li data-reveal><span class="rows__num">01</span><strong>Code</strong>
+                    <span class="rows__tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></span></li>
+                <li data-reveal><span class="rows__num">02</span><strong data-i18n="skills.layout">Layout</strong>
+                    <span class="rows__tags"><span>Flexbox</span><span>Grid</span><span>Responsive design</span></span></li>
+                <li data-reveal><span class="rows__num">03</span><strong>Design</strong>
+                    <span class="rows__tags"><span>Photoshop</span><span>Illustrator</span><span>Canva</span></span></li>
+                <li data-reveal><span class="rows__num">04</span><strong data-i18n="skills.tools">Tools</strong>
+                    <span class="rows__tags"><span>Git &amp; GitHub</span><span>PhpStorm</span><span>VS Code</span></span></li>
             </ul>
         </div>
         <aside data-reveal="right">
             <h3 data-i18n="next.title">Next on my list</h3>
-            <!-- EDIT ME: what you want to learn next -->
             <ul>
                 <li data-i18n="next.js">Going deeper into JavaScript</li>
-                <li data-i18n="next.git">Git &amp; GitHub</li>
-                <li data-i18n="next.online">Putting a site online</li>
+                <li data-i18n="next.react">Learning React</li>
+                <li data-i18n="next.php">Learning PHP</li>
             </ul>
             <p class="aside__note" data-i18n="next.note">Always learning <span aria-hidden="true">✦</span></p>
         </aside>

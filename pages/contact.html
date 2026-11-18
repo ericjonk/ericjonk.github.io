@@ -55,33 +55,6 @@
                 <a href="../cv/eric-kimbembe-cv.pdf" class="button1 magnetic" data-i18n="btn.cv">My CV (PDF) <span aria-hidden="true">↗</span></a>
             </div>
         </div>
-        <!-- EDIT ME: put your real links and usernames here -->
-        <ul class="socials">
-            <li>
-                <a href="#">
-                    <img src="../images/twitter.webp" alt="" class="soclogo">
-                    <span>@myacc</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="../images/insta.webp" alt="" class="soclogo">
-                    <span>@myacc</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="../images/linkedin-lighter-green.webp" alt="" class="soclogo">
-                    <span>@myacc</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="../images/youtube-lighter-green.webp" alt="" class="soclogo">
-                    <span>@myacc</span>
-                </a>
-            </li>
-        </ul>
     </section>
     <section class="contactr">
         <h2 class="h2aft" data-i18n="contact.formTitle">Contact Me</h2>
@@ -95,14 +68,8 @@
                 <small class="error" data-i18n="form.emailError">Please enter a valid email.</small>
             </label>
             <label class="full"><span data-i18n="form.subject">Subject</span>
-                <select name="subject" required>
-                    <option value="" disabled selected data-i18n="form.subjectChoose">Choose a subject</option>
-                    <option data-i18n="form.subjectInternship">Internship / work-study</option>
-                    <option data-i18n="form.subjectSchool">School</option>
-                    <option data-i18n="form.subjectProject">Project</option>
-                    <option data-i18n="form.subjectHi">Just saying hi</option>
-                </select>
-                <small class="error" data-i18n="form.subjectError">Please choose a subject.</small>
+                <input type="text" name="subject" placeholder="What is it about?" data-i18n-placeholder="form.subjectPh" required>
+                <small class="error" data-i18n="form.subjectError">Please add a subject.</small>
             </label>
             <label class="full">Message
                 <textarea name="message" rows="4" placeholder="Enter your message" data-i18n-placeholder="form.messagePh" required></textarea>

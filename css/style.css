@@ -340,6 +340,35 @@ MAIN:BANNER
     letter-spacing: -0.045em;
     line-height: 0.92;
 }
+/* small line under the name: what I do and where */
+.role {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 1.3rem 0 0;
+    font: 500 0.8rem var(--mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+.role::before {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: currentColor;
+}
+.tagline {
+    margin: 1.4rem 0 0;
+    font-size: clamp(1.8rem, 3.3vw, 2.9rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+}
+.tagline em {
+    font-weight: 400;
+    font-size: 1.1em;
+    letter-spacing: 0;
+    color: var(--accent);
+}
 /* each line slides up from behind a mask */
 .line {
     display: block;
@@ -353,25 +382,14 @@ MAIN:BANNER
 .line:nth-child(2) > span {
     animation-delay: 0.12s;
 }
-#banner h2 {
-    margin-top: 1.4rem;
-    font-size: clamp(1.4rem, 2.6vw, 2.2rem);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-}
-#banner h2 em {
-    font-size: 1.2em;
-    color: var(--accent);
-    white-space: nowrap;    /* keeps "front-end" on one line on small phones */
-}
 .lead {
     max-width: 34ch;
-    margin: 1.2rem 0 0;
+    margin: 1.6rem 0 0;
     font-size: 1.1rem;
     opacity: 0.85;
 }
 /* text that fades in when a page opens */
-#banner .eyebrow, #banner h2, .lead, .buttons {
+#banner .eyebrow, .role, .tagline, .lead, .buttons {
     animation: fade-up 0.9s 0.45s var(--ease) both;
 }
 .lead {
@@ -869,6 +887,24 @@ MAIN:SKILLS
 .rows li:hover .rows__text {
     color: rgba(255, 255, 255, 0.9);
 }
+/* skills shown as small pills (Toolkit) */
+.rows__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.rows__tags span {
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 99px;
+    font: 500 0.78rem var(--mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: border-color 0.35s;
+}
+.rows li:hover .rows__tags span {
+    border-color: rgba(255, 255, 255, 0.6);
+}
 aside {
     position: sticky;
     top: 130px;
@@ -949,37 +985,6 @@ MAIN
     padding: 8rem 4rem 6rem;
     transition: background 0.4s;
 }
-.socials {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    max-width: 420px;
-}
-.socials a {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    color: white;
-    text-decoration: none;
-    font-size: 0.95rem;
-    opacity: 0.75;
-    transition: opacity 0.2s, transform 0.35s var(--ease);
-}
-.socials a:hover {
-    opacity: 1;
-    transform: translateX(6px);
-}
-.soclogo {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.5s var(--ease);
-}
-.socials a:hover .soclogo {
-    transform: rotate(-12deg) scale(1.1);
-}
 /*
 FORM
  */
@@ -1021,9 +1026,6 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
     border-bottom-color: var(--accent);
     box-shadow: 0 2px 0 var(--accent);
-}
-select {
-    cursor: pointer;
 }
 textarea {
     resize: vertical;
@@ -1371,6 +1373,11 @@ ANIMATIONS AND STUFF
 @keyframes morph {
     50% { border-radius: 42% 58% 40% 60% / 60% 40% 60% 40%; transform: rotate(20deg) scale(1.06); }
 }
+@keyframes wave {
+    0%, 60%, 100% { transform: rotate(0); }
+    10%, 30% { transform: rotate(16deg); }
+    20%, 40% { transform: rotate(-10deg); }
+}
 @keyframes marquee {
     to { transform: translateX(-50%); }
 }
@@ -1379,11 +1386,6 @@ ANIMATIONS AND STUFF
     50% { transform: scaleY(1); transform-origin: top; }
     51% { transform-origin: bottom; }
     100% { transform: scaleY(0); transform-origin: bottom; }
-}
-@keyframes wave {
-    0%, 60%, 100% { transform: rotate(0); }
-    10%, 30% { transform: rotate(16deg); }
-    20%, 40% { transform: rotate(-10deg); }
 }
 /*
 
@@ -1538,7 +1540,7 @@ RESPONSIVE
     .rows li {
         grid-template-columns: 2.4rem 1fr;
     }
-    .rows__text {
+    .rows__text, .rows__tags {
         grid-column: 2;
     }
     .cta {
@@ -1590,6 +1592,12 @@ RESPONSIVE
     }
     form {
         grid-template-columns: 1fr;
+    }
+}
+/* very small phones: hide the little dash so "what I do · where" stays on one line */
+@media (max-width: 380px) {
+    .role::before {
+        display: none;
     }
 }
 /* people who prefer less motion get a calm version */
