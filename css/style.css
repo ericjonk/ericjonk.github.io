@@ -889,6 +889,11 @@ MAIN
 .contactl h1 em, .contactl .eyebrow {
     color: var(--mint);
 }
+/* this panel is dark in both themes, so its button is always mint */
+.contactl .button1 {
+    --btn-bg: var(--mint);
+    --btn-text: var(--ink);
+}
 .contactr {
     background: var(--band);
     padding: 8rem 4rem 6rem;

@@ -27,6 +27,7 @@ const FRENCH = {
     "nav.projects": `Projets`,
     "nav.toolkit": `Outils`,
     "btn.contact": `Me contacter <span aria-hidden="true">→</span>`,
+    "btn.cv": `Mon CV (PDF) <span aria-hidden="true">↗</span>`,
     "footer.made": `Codé à la main en HTML, CSS et JS`,
 
     /* ---------- home page ---------- */
