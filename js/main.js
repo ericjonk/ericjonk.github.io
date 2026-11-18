@@ -135,7 +135,7 @@ if (shotButtons.length) {
 const form = document.querySelector("#contact-form");
 if (form) {
     const note = form.querySelector(".form-note");
-    const fields = form.querySelectorAll("input:not([type=checkbox]), select, textarea");
+    const fields = form.querySelectorAll("input:not([type=checkbox]), textarea");
 
     // shows or hides the red message under a field
     const check = (field) => {
