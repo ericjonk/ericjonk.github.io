@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio — Eric J. Kimbembe</title>
+    <meta name="description" data-i18n-content="folio.description" content="How I built my portfolio: a hand-coded, responsive website in HTML, CSS and JavaScript, with a light and dark theme.">
+    <link rel="icon" href="../images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/theme.js"></script>
+</head>
+<body id="top">
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme" data-i18n-aria-label="a11y.theme">
+        <span class="theme-toggle__dot"></span>
+    </button>
+    <button class="lang-toggle" type="button" lang="fr" aria-label="Version française">FR</button>
+    <nav class="headl" aria-label="Main left" data-i18n-aria-label="a11y.navLeft">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="../index.html#about" data-i18n="nav.about">About</a>
+    </nav>
+    <a href="../index.html" class="logo" aria-label="Home" data-i18n-aria-label="nav.home"><img src="../images/logo.webp" alt="EJK"></a>
+    <nav class="headr" aria-label="Main right" data-i18n-aria-label="a11y.navRight">
+        <a href="../index.html#project" aria-current="true" data-i18n="nav.projects">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
+    </button>
+</header>
+
+<nav class="mobile-menu" aria-label="Mobile" data-i18n-aria-label="a11y.navMobile">
+    <a href="../index.html"><small>01</small><span data-i18n="nav.home">Home</span></a>
+    <a href="../index.html#about"><small>02</small><span data-i18n="nav.about">About</span></a>
+    <a href="../index.html#project"><small>03</small><span data-i18n="nav.projects">Projects</span></a>
+    <a href="../index.html#skills"><small>04</small><span data-i18n="nav.toolkit">Toolkit</span></a>
+    <a href="contact.html"><small>05</small>Contact</a>
+</nav>
+
+<main class="project">
+    <section class="project-hero">
+        <a href="../index.html#project" class="back" data-i18n="project.back"><span aria-hidden="true">←</span> All projects</a>
+        <p class="eyebrow" data-i18n="folio.eyebrow">Personal project · 2026</p>
+        <h1>
+            <span class="line"><span data-i18n="folio.title1">My</span></span>
+            <span class="line"><span><em>portfolio</em></span></span>
+        </h1>
+        <p class="lead" data-i18n="folio.lead">The site you are on: a place to show my work and my path into front-end development, hand-coded and built to work on any screen.</p>
+        <dl class="facts">
+            <div><dt>Type</dt><dd data-i18n="folio.factType">Personal project</dd></div>
+            <div><dt data-i18n="facts.stack">Stack</dt><dd data-i18n="facts.stackValue">HTML, CSS, JavaScript — no framework</dd></div>
+            <div><dt>Pages</dt><dd data-i18n="folio.factPages">Home, contact, project pages</dd></div>
+            <div><dt data-i18n="facts.hosting">Hosting</dt><dd>GitHub Pages</dd></div>
+        </dl>
+    </section>
+
+    <div class="shot-switch" role="group" aria-label="Screenshot theme" data-i18n-aria-label="shots.label">
+        <span data-i18n="shots.title">Screenshots</span>
+        <button type="button" data-shots="light" data-i18n="shots.light">Light</button>
+        <button type="button" data-shots="dark" data-i18n="shots.dark">Dark</button>
+    </div>
+    <figure class="shot" data-reveal>
+        <div class="browser">
+            <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img class="shot-light" src="../images/projects/portfolio-home-light.webp" alt="Home page of the portfolio with its green header and illustration" data-i18n-alt="folio.shotHome" width="1600" height="900">
+            <img class="shot-dark" src="../images/projects/portfolio-home-dark.webp" alt="Home page of the portfolio with its green header and illustration, dark mode" data-i18n-alt="folio.shotHomeDark" width="1600" height="900">
+        </div>
+    </figure>
+
+    <!-- EDIT ME: this text is a draft — rewrite it in your own words -->
+    <section class="project-block">
+        <div data-reveal>
+            <p class="eyebrow" data-i18n="folio.goalEyebrow">The goal</p>
+            <h2 class="h2aft" data-i18n="folio.goalTitle">A CV you can <em>click through</em></h2>
+        </div>
+        <div class="project-block__text" data-reveal>
+            <p data-i18n="folio.goal1">I am looking for a work-study position or an internship in front-end development. A CV can list HTML, CSS and JavaScript; a portfolio can show them. So the site itself had to be the proof: clear, quick to read on a phone, and careful with the details.</p>
+            <p data-i18n="folio.goal2">It is built around my own visual identity: the green palette, the EJK logo hanging from the header, and the illustrations. The rule was plain HTML, CSS and JavaScript, with no framework and no template.</p>
+        </div>
+    </section>
+
+    <section class="project-block project-block--stack">
+        <div data-reveal>
+            <p class="eyebrow" data-i18n="project.builtEyebrow">What I built</p>
+            <h2 class="h2aft" data-i18n="folio.builtTitle">Small details, <em>done with care</em></h2>
+        </div>
+        <ul class="rows">
+            <li data-reveal><span class="rows__num">01</span><strong data-i18n="folio.themeName">Light &amp; dark</strong><span class="rows__text" data-i18n="folio.theme">A theme toggle with a moon drawn in CSS, remembered on every page</span></li>
+            <li data-reveal><span class="rows__num">02</span><strong>Responsive</strong><span class="rows__text" data-i18n="folio.responsive">Grid and Flexbox layouts from small phones to wide screens, with a full-screen menu on phones</span></li>
+            <li data-reveal><span class="rows__num">03</span><strong data-i18n="folio.motionName">Motion</strong><span class="rows__text" data-i18n="folio.motion">Titles that slide in, sections that appear as you scroll, and cards that tilt towards the mouse</span></li>
+            <li data-reveal><span class="rows__num">04</span><strong data-i18n="folio.formName">Contact form</strong><span class="rows__text" data-i18n="folio.form">Every field is checked in JavaScript, with a clear message about what to fix</span></li>
+            <li data-reveal><span class="rows__num">05</span><strong data-i18n="folio.a11yName">Accessibility</strong><span class="rows__text" data-i18n="folio.a11y">Semantic HTML, visible keyboard focus, readable contrast, and a calmer version for people who prefer less motion</span></li>
+            <li data-reveal><span class="rows__num">06</span><strong data-i18n="folio.langName">Bilingual</strong><span class="rows__text" data-i18n="folio.lang">English and French on every page, following the browser's language or your choice</span></li>
+        </ul>
+    </section>
+
+    <div class="gallery">
+        <figure class="shot" data-reveal>
+            <div class="browser">
+                <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                <img class="shot-light" src="../images/projects/portfolio-projects-light.webp" alt="Projects section with three project cards" data-i18n-alt="folio.shotProjects" loading="lazy" width="1600" height="900">
+                <img class="shot-dark" src="../images/projects/portfolio-projects-dark.webp" alt="Projects section with three project cards, dark mode" data-i18n-alt="folio.shotProjectsDark" loading="lazy" width="1600" height="900">
+            </div>
+            <figcaption data-i18n="folio.captionProjects">The projects section</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+            <div class="browser">
+                <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                <img class="shot-light" src="../images/projects/portfolio-contact-light.webp" alt="Contact page with social links and a contact form" data-i18n-alt="folio.shotContact" loading="lazy" width="1600" height="900">
+                <img class="shot-dark" src="../images/projects/portfolio-contact-dark.webp" alt="Contact page with social links and a contact form, dark mode" data-i18n-alt="folio.shotContactDark" loading="lazy" width="1600" height="900">
+            </div>
+            <figcaption data-i18n="folio.captionContact">The contact page and its form</figcaption>
+        </figure>
+        <figure class="shot shot--phones" data-reveal>
+            <div class="phone">
+                <img class="shot-light" src="../images/projects/portfolio-m-home-light.webp" alt="Home page on a phone" data-i18n-alt="phone.home" loading="lazy" width="440" height="958">
+                <img class="shot-dark" src="../images/projects/portfolio-m-home-dark.webp" alt="Home page on a phone, dark mode" data-i18n-alt="phone.homeDark" loading="lazy" width="440" height="958">
+            </div>
+            <div class="phone">
+                <img class="shot-light" src="../images/projects/portfolio-m-menu-light.webp" alt="Full-screen menu on a phone" data-i18n-alt="folio.phoneMenu" loading="lazy" width="440" height="958">
+                <img class="shot-dark" src="../images/projects/portfolio-m-menu-dark.webp" alt="Full-screen menu on a phone, dark mode" data-i18n-alt="folio.phoneMenuDark" loading="lazy" width="440" height="958">
+            </div>
+            <div class="phone">
+                <img class="shot-light" src="../images/projects/portfolio-m-contact-light.webp" alt="Contact page on a phone" data-i18n-alt="phone.contact" loading="lazy" width="440" height="958">
+                <img class="shot-dark" src="../images/projects/portfolio-m-contact-dark.webp" alt="Contact page on a phone, dark mode" data-i18n-alt="phone.contactDark" loading="lazy" width="440" height="958">
+            </div>
+            <figcaption data-i18n="folio.captionPhones">Home, menu and contact on a phone</figcaption>
+        </figure>
+    </div>
+
+    <div class="project-nav" data-reveal>
+        <a href="../index.html#project" class="button1 button1--ghost magnetic" data-i18n="project.backToProjects"><span aria-hidden="true">←</span> Back to projects</a>
+        <a href="contact.html" class="button1 magnetic" data-i18n="btn.contact">Contact me <span aria-hidden="true">→</span></a>
+    </div>
+</main>
+
+<a href="#top" class="to-top" aria-label="Back to top" data-i18n-aria-label="a11y.top">&uarr;</a>
+
+<footer>
+    <div class="footrow">
+        <p>© 2026 Eric Jonathan Kimbembe</p>
+        <p data-i18n="footer.made">Hand-coded with HTML, CSS &amp; JS</p>
+    </div>
+</footer>
+
+<script src="../js/lang.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
