@@ -50,15 +50,15 @@
             <span class="line"><span>Rouen</span></span>
             <span class="line"><span><em>à Vélo</em></span></span>
         </h1>
-        <p class="lead" data-i18n="velo.lead">A five-page website for a bike rental and repair workshop on the banks of the Seine, designed for visitors on their phone.</p>
+        <p class="lead" data-i18n="velo.lead">A five-page French website for a bike repair and rental workshop in Rouen, built from scratch in plain HTML, CSS and JavaScript, and designed for people on their phones.</p>
         <div class="buttons">
             <a href="../projects/rouen-a-velo/index.html" class="button1 magnetic" data-i18n="velo.visit">Visit the site <span aria-hidden="true">→</span></a>
         </div>
         <dl class="facts">
-            <div><dt>Type</dt><dd data-i18n="velo.factType">Training project, Need for School</dd></div>
-            <div><dt data-i18n="facts.stack">Stack</dt><dd data-i18n="facts.stackValue">HTML, CSS, JavaScript — no framework</dd></div>
-            <div><dt>Pages</dt><dd data-i18n="velo.factPages">Home, bikes, workshop, rides, contact</dd></div>
-            <div><dt data-i18n="facts.language">Language</dt><dd data-i18n="velo.factLanguage">French</dd></div>
+            <div><dt>Type</dt><dd data-i18n="velo.factType">School project</dd></div>
+            <div><dt data-i18n="facts.client">Client</dt><dd data-i18n="velo.factClient">Bike workshop, Rouen (fictional)</dd></div>
+            <div><dt data-i18n="facts.stack">Stack</dt><dd>HTML, CSS, JavaScript</dd></div>
+            <div><dt data-i18n="facts.hosting">Hosting</dt><dd>GitHub Pages</dd></div>
         </dl>
     </section>
 
@@ -81,8 +81,7 @@
             <h2 class="h2aft" data-i18n="velo.briefTitle">A client who was <em>losing customers</em></h2>
         </div>
         <div class="project-block__text" data-reveal>
-            <p data-i18n="velo.brief1">The (fictional) client runs a small bike workshop in Rouen and had no website. Her customers are tourists and locals searching on their phone, and they kept asking the same two questions: is this bike available, and how much will it cost?</p>
-            <p data-i18n="velo.brief2">The site had to answer both before they came to the shop, present the workshop and its prices, and be pleasant on a small screen. The rules: HTML, CSS and JavaScript only, with no library or framework.</p>
+            <p data-i18n="velo.brief">Camille repairs and rents bikes on the quai de la Bourse, but she had no website. Customers kept asking the same things: which bikes are free, how much they cost, what the repairs cost, and when the workshop is open. The site had to answer those questions, work well on a small screen, and use only HTML, CSS and JavaScript.</p>
         </div>
     </section>
 
@@ -92,12 +91,22 @@
             <h2 class="h2aft" data-i18n="velo.builtTitle">From a data file to a <em>booking</em></h2>
         </div>
         <ul class="rows">
-            <li data-reveal><span class="rows__num">01</span><strong>Catalogue</strong><span class="rows__text" data-i18n="velo.catalogue">The ten bikes are generated from a JavaScript data file, with search, category filters and sorting by price</span></li>
-            <li data-reveal><span class="rows__num">02</span><strong data-i18n="velo.bookingName">Booking</strong><span class="rows__text" data-i18n="velo.booking">A dialog computes the exact price live: duration, helmet, lock or child seat, and 10% off from three days</span></li>
-            <li data-reveal><span class="rows__num">03</span><strong data-i18n="velo.darkName">Dark mode</strong><span class="rows__text" data-i18n="velo.dark">A toggle that remembers the choice, and switches to dark by itself in the evening</span></li>
-            <li data-reveal><span class="rows__num">04</span><strong>Mobile first</strong><span class="rows__text" data-i18n="velo.mobile">Responsive layout with a hamburger menu that still works if JavaScript is off</span></li>
-            <li data-reveal><span class="rows__num">05</span><strong data-i18n="velo.contentName">Content</strong><span class="rows__text" data-i18n="velo.content">Repair prices, team, FAQ, six rides, opening hours, a contact form and a map</span></li>
+            <li data-reveal><span class="rows__num">01</span><strong>Catalogue</strong><span class="rows__text" data-i18n="velo.catalogue">The 10 bikes are built from the data file, with search that ignores accents, filters and price sorting.</span></li>
+            <li data-reveal><span class="rows__num">02</span><strong data-i18n="velo.bookingName">Booking</strong><span class="rows__text" data-i18n="velo.booking">A dialog with hour or day quantity, options (helmet, lock, child seat) and a live total. There is a 10&nbsp;% discount from 3 days, and it never applies to the options.</span></li>
+            <li data-reveal><span class="rows__num">03</span><strong data-i18n="velo.darkName">Dark mode</strong><span class="rows__text" data-i18n="velo.dark">A button that remembers your choice, and it switches on its own from 19:00 to 07:00. A tiny script sets the theme before the page is drawn, so there is no white flash.</span></li>
+            <li data-reveal><span class="rows__num">04</span><strong>Mobile first</strong><span class="rows__text" data-i18n="velo.mobile">A hamburger menu, two bike cards per row on a phone, and tap-to-call links. Without JavaScript the menu simply stays visible.</span></li>
+            <li data-reveal><span class="rows__num">05</span><strong data-i18n="velo.contentName">Content</strong><span class="rows__text" data-i18n="velo.content">Repair prices, the team, an FAQ, six routes, opening hours, a contact form and a map.</span></li>
         </ul>
+    </section>
+
+    <section class="project-block">
+        <div data-reveal>
+            <p class="eyebrow" data-i18n="velo.howEyebrow">How it’s built</p>
+            <h2 class="h2aft" data-i18n="velo.howTitle">Simple <em>by design</em></h2>
+        </div>
+        <div class="project-block__text" data-reveal>
+            <p data-i18n="velo.how">Only the bikes page uses data. Every other page is plain HTML, so there is almost nothing to maintain. The whole site runs on five small JavaScript files: one sets the theme, one runs the menu and the dark-mode button, and three handle the bikes page.</p>
+        </div>
     </section>
 
     <div class="gallery">
@@ -123,14 +132,14 @@
                 <img class="shot-dark" src="../images/projects/velo-m-home-dark.webp" alt="Home page on a phone, dark mode" data-i18n-alt="phone.homeDark" loading="lazy" width="440" height="958">
             </div>
             <div class="phone">
+                <img class="shot-light" src="../images/projects/velo-m-menu-light.webp" alt="Open hamburger menu on a phone" data-i18n-alt="velo.phoneMenu" loading="lazy" width="440" height="958">
+                <img class="shot-dark" src="../images/projects/velo-m-menu-dark.webp" alt="Open hamburger menu on a phone, dark mode" data-i18n-alt="velo.phoneMenuDark" loading="lazy" width="440" height="958">
+            </div>
+            <div class="phone">
                 <img class="shot-light" src="../images/projects/velo-m-velos-light.webp" alt="Bike catalogue on a phone" data-i18n-alt="velo.phoneBikes" loading="lazy" width="440" height="958">
                 <img class="shot-dark" src="../images/projects/velo-m-velos-dark.webp" alt="Bike catalogue on a phone, dark mode" data-i18n-alt="velo.phoneBikesDark" loading="lazy" width="440" height="958">
             </div>
-            <div class="phone">
-                <img class="shot-light" src="../images/projects/velo-m-contact-light.webp" alt="Contact page on a phone" data-i18n-alt="phone.contact" loading="lazy" width="440" height="958">
-                <img class="shot-dark" src="../images/projects/velo-m-contact-dark.webp" alt="Contact page on a phone, dark mode" data-i18n-alt="phone.contactDark" loading="lazy" width="440" height="958">
-            </div>
-            <figcaption data-i18n="velo.captionPhones">Home, bikes and contact on a phone</figcaption>
+            <figcaption data-i18n="velo.captionPhones">Home, menu and bikes on a phone</figcaption>
         </figure>
     </div>
 
