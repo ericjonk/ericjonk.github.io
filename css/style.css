@@ -219,6 +219,26 @@ header {
 .dark .theme-toggle__dot::after {
     transform: none;
 }
+/* language switch: on the left of the header, mirroring the theme toggle */
+.lang-toggle {
+    position: absolute;
+    left: 2rem; top: 50%;
+    translate: 0 -50%;
+    height: 28px;
+    padding: 0 10px;
+    border: 1.5px solid var(--brand-text);
+    border-radius: 99px;
+    background: transparent;
+    color: var(--brand-text);
+    font: 600 0.72rem var(--mono);
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+.lang-toggle:hover {
+    background: var(--brand-text);
+    color: var(--brand-bg);
+}
 /* phones only: see the RESPONSIVE section */
 .burger, .mobile-menu {
     display: none;
@@ -342,6 +362,7 @@ MAIN:BANNER
 #banner h2 em {
     font-size: 1.2em;
     color: var(--accent);
+    white-space: nowrap;    /* keeps "front-end" on one line on small phones */
 }
 .lead {
     max-width: 34ch;
@@ -466,7 +487,7 @@ MAIN:BANNER
     color: inherit;
     opacity: 0.75;
 }
-.scroll-hint span {
+.scroll-hint__line {
     width: 1px;
     height: 38px;
     background: currentColor;
@@ -645,7 +666,7 @@ MAIN:PROJECT
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top left;
+    object-position: top;   /* keep the top of the screenshot, centred left to right */
     transition: transform 0.8s var(--ease);
 }
 .card:hover .cover img {
@@ -692,66 +713,7 @@ MAIN:PROJECT
     border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 99px;
 }
-/* cover 2: a tiny drawing of this website, made only with CSS */
-.mini {
-    width: 74%;
-    max-width: 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    background: var(--mint);
-    border: 2px solid var(--ink);
-    box-shadow: 8px 8px 0 var(--forest);
-    transition: transform 0.6s var(--ease);
-}
-.cover--site {
-    background: var(--sage);
-}
-.card:hover .mini {
-    transform: translateY(-6px) rotate(-2deg) scale(1.04);
-}
-.mini__bar {
-    display: flex;
-    gap: 5px;
-    padding: 7px 9px;
-    background: var(--ink);
-}
-.mini__bar span {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--mint);
-}
-.mini__body {
-    position: relative;
-    display: grid;
-    gap: 7px;
-    padding: 18px 16px 22px;
-}
-.mini__line {
-    height: 13px;
-    width: 46%;
-    border-radius: 3px;
-    background: var(--ink);
-}
-.mini__line + .mini__line {
-    width: 58%;
-}
-.mini__button {
-    height: 12px;
-    width: 26%;
-    margin-top: 6px;
-    border-radius: 99px;
-    background: var(--forest);
-}
-.mini__art {
-    position: absolute;
-    right: 14px; top: 14px;
-    width: 26%;
-    aspect-ratio: 1;
-    border-radius: 58% 42% 55% 45% / 50% 60% 40% 50%;
-    background: var(--green);
-}
-/* cover 3: rings */
+/* cover drawn in CSS: rings */
 .cover--rings {
     background:
         repeating-radial-gradient(circle at 30% 120%, transparent 0 22px, rgba(12, 59, 12, 0.28) 22px 24px),
@@ -1410,6 +1372,11 @@ RESPONSIVE
     .theme-toggle {
         right: auto;
         left: 1.2rem;
+    }
+    /* next to the menu button */
+    .lang-toggle {
+        left: auto;
+        right: calc(1.2rem + 48px);
     }
     .burger {
         display: block;

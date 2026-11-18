@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contact — Eric J. Kimbembe</title>
-    <meta name="description" content="Get in touch with Eric J. Kimbembe, aspiring front-end developer.">
+    <meta name="description" data-i18n-content="contact.description" content="Get in touch with Eric J. Kimbembe, aspiring front-end developer.">
     <link rel="icon" href="../images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,28 +16,29 @@
 <div class="progress" aria-hidden="true"></div>
 
 <header>
-    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme" data-i18n-aria-label="a11y.theme">
         <span class="theme-toggle__dot"></span>
     </button>
-    <nav class="headl" aria-label="Main left">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#about">About</a>
+    <button class="lang-toggle" type="button" lang="fr" aria-label="Version française">FR</button>
+    <nav class="headl" aria-label="Main left" data-i18n-aria-label="a11y.navLeft">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="../index.html#about" data-i18n="nav.about">About</a>
     </nav>
-    <a href="../index.html" class="logo" aria-label="Home"><img src="../images/logo.webp" alt="EJK"></a>
-    <nav class="headr" aria-label="Main right">
-        <a href="../index.html#project">Projects</a>
+    <a href="../index.html" class="logo" aria-label="Home" data-i18n-aria-label="nav.home"><img src="../images/logo.webp" alt="EJK"></a>
+    <nav class="headr" aria-label="Main right" data-i18n-aria-label="a11y.navRight">
+        <a href="../index.html#project" data-i18n="nav.projects">Projects</a>
         <a href="contact.html" aria-current="page">Contact</a>
     </nav>
-    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false">
         <span></span><span></span>
     </button>
 </header>
 
-<nav class="mobile-menu" aria-label="Mobile">
-    <a href="../index.html"><small>01</small>Home</a>
-    <a href="../index.html#about"><small>02</small>About</a>
-    <a href="../index.html#project"><small>03</small>Projects</a>
-    <a href="../index.html#skills"><small>04</small>Toolkit</a>
+<nav class="mobile-menu" aria-label="Mobile" data-i18n-aria-label="a11y.navMobile">
+    <a href="../index.html"><small>01</small><span data-i18n="nav.home">Home</span></a>
+    <a href="../index.html#about"><small>02</small><span data-i18n="nav.about">About</span></a>
+    <a href="../index.html#project"><small>03</small><span data-i18n="nav.projects">Projects</span></a>
+    <a href="../index.html#skills"><small>04</small><span data-i18n="nav.toolkit">Toolkit</span></a>
     <a href="contact.html"><small>05</small>Contact</a>
 </nav>
 
@@ -46,10 +47,10 @@
         <div>
             <p class="eyebrow">Contact</p>
             <h1>
-                <span class="line"><span>I'd love to</span></span>
-                <span class="line"><span><em>hear</em> from you</span></span>
+                <span class="line"><span data-i18n="contact.title1">I'd love to</span></span>
+                <span class="line"><span data-i18n="contact.title2"><em>hear</em> from you</span></span>
             </h1>
-            <p class="lead">A school, an internship, a project or just a hello — my inbox is open.</p>
+            <p class="lead" data-i18n="contact.lead">A school, an internship, a project or just a hello — my inbox is open.</p>
         </div>
         <!-- EDIT ME: put your real links and usernames here -->
         <ul class="socials">
@@ -80,35 +81,35 @@
         </ul>
     </section>
     <section class="contactr">
-        <h2 class="h2aft">Contact Me</h2>
+        <h2 class="h2aft" data-i18n="contact.formTitle">Contact Me</h2>
         <form action="#" method="post" id="contact-form" novalidate>
-            <label>Full Name
-                <input type="text" name="name" placeholder="Enter your full name" required>
-                <small class="error">Please tell me your name.</small>
+            <label><span data-i18n="form.name">Full Name</span>
+                <input type="text" name="name" placeholder="Enter your full name" data-i18n-placeholder="form.namePh" required>
+                <small class="error" data-i18n="form.nameError">Please tell me your name.</small>
             </label>
-            <label>Email
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <small class="error">Please enter a valid email.</small>
+            <label><span data-i18n="form.email">Email</span>
+                <input type="email" name="email" placeholder="Enter your email" data-i18n-placeholder="form.emailPh" required>
+                <small class="error" data-i18n="form.emailError">Please enter a valid email.</small>
             </label>
-            <label class="full">Subject
+            <label class="full"><span data-i18n="form.subject">Subject</span>
                 <select name="subject" required>
-                    <option value="" disabled selected>Choose a subject</option>
-                    <option>Internship / work-study</option>
-                    <option>School</option>
-                    <option>Project</option>
-                    <option>Just saying hi</option>
+                    <option value="" disabled selected data-i18n="form.subjectChoose">Choose a subject</option>
+                    <option data-i18n="form.subjectInternship">Internship / work-study</option>
+                    <option data-i18n="form.subjectSchool">School</option>
+                    <option data-i18n="form.subjectProject">Project</option>
+                    <option data-i18n="form.subjectHi">Just saying hi</option>
                 </select>
-                <small class="error">Please choose a subject.</small>
+                <small class="error" data-i18n="form.subjectError">Please choose a subject.</small>
             </label>
             <label class="full">Message
-                <textarea name="message" rows="4" placeholder="Enter your message" required></textarea>
-                <small class="error">Please write a short message.</small>
+                <textarea name="message" rows="4" placeholder="Enter your message" data-i18n-placeholder="form.messagePh" required></textarea>
+                <small class="error" data-i18n="form.messageError">Please write a short message.</small>
             </label>
             <label class="checkbox full">
                 <input type="checkbox" name="consent" required>
-                I agree that my data can be used to respond to me.
+                <span data-i18n="form.consent">I agree that my data can be used to respond to me.</span>
             </label>
-            <button type="submit" class="button1 magnetic">Send message <span aria-hidden="true">→</span></button>
+            <button type="submit" class="button1 magnetic" data-i18n="form.send">Send message <span aria-hidden="true">→</span></button>
             <p class="form-note full" role="status" aria-live="polite"></p>
         </form>
     </section>
@@ -117,10 +118,11 @@
 <footer>
     <div class="footrow">
         <p>© 2026 Eric Jonathan Kimbembe</p>
-        <p>Hand-coded with HTML, CSS &amp; JS</p>
+        <p data-i18n="footer.made">Hand-coded with HTML, CSS &amp; JS</p>
     </div>
 </footer>
 
+<script src="../js/lang.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>

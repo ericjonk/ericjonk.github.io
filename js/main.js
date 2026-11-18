@@ -12,6 +12,9 @@ const CONTACT_EMAIL = "";
 const root = document.documentElement;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// returns the message in the language the page is shown in (see js/lang.js)
+const say = (english, french) => (root.lang === "fr" ? french : english);
+
 /* ---------- 1. Light / dark theme ----------
    The "dark" class on <html> switches the colours (see :root.dark in the CSS).
    The choice is saved, and js/theme.js reads it back on every page. */
@@ -32,8 +35,7 @@ logo.addEventListener("click", () => {
 const burger = document.querySelector(".burger");
 function setMenu(open) {
     document.body.classList.toggle("menu-open", open);
-    burger.setAttribute("aria-expanded", open);
-    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    burger.setAttribute("aria-expanded", open);   // tells screen readers whether the menu is open
 }
 burger.addEventListener("click", () => setMenu(!document.body.classList.contains("menu-open")));
 document.querySelector(".mobile-menu").addEventListener("click", () => setMenu(false));
@@ -151,17 +153,23 @@ if (form) {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         const valid = [...fields].map(check).every(Boolean);
-        if (!valid) return fail("Please fix the fields in red.");
-        if (!form.consent.checked) return fail("Please tick the box so I can reply to you.");
+        if (!valid) return fail(say("Please fix the fields in red.", "Corrigez les champs en rouge."));
+        if (!form.consent.checked) return fail(say("Please tick the box so I can reply to you.", "Cochez la case pour que je puisse vous répondre."));
 
         const name = form.name.value.trim();
         if (CONTACT_EMAIL) {
             const subject = encodeURIComponent("[Portfolio] " + form.subject.value + " — " + name);
             const body = encodeURIComponent(form.message.value + "\n\n" + name + "\n" + form.email.value);
             window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
-            note.textContent = "Thanks, " + name + "! Your mail app is opening with the message ready to send.";
+            note.textContent = say(
+                "Thanks, " + name + "! Your mail app is opening with the message ready to send.",
+                "Merci, " + name + " ! Votre messagerie s'ouvre avec le message prêt à être envoyé."
+            );
         } else {
-            note.textContent = "Thanks, " + name + "! (Demo: this form is not connected to a mailbox yet.)";
+            note.textContent = say(
+                "Thanks, " + name + "! (Demo: this form is not connected to a mailbox yet.)",
+                "Merci, " + name + " ! (Démo : ce formulaire n'est pas encore relié à une boîte mail.)"
+            );
         }
         note.className = "form-note full is-ok";
         form.reset();
