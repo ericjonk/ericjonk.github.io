@@ -540,20 +540,94 @@ MAIN:ABOUT
  */
 #about {
     display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
-    gap: clamp(2rem, 6vw, 6rem);
+    gap: 4rem clamp(2rem, 6vw, 6rem);
     max-width: var(--wrap);
     margin: 0 auto;
     padding: 150px 2rem 170px;
 }
-.abimg img {
-    display: block;
-    height: auto;
+/* The illustration: a square where every layer is placed in %,
+   so the whole drawing grows and shrinks as one piece. */
+.about-art {
+    position: relative;
+    isolation: isolate;             /* keeps the disc and ring (z-index: -1) inside the figure */
+    aspect-ratio: 1;
+    margin: 0;
+    color: var(--soft);             /* colour of the sketches, the ring and the notes */
+    container-type: inline-size;    /* lets the notes use cqw: 1cqw = 1% of the figure's width */
+}
+/* mint disc */
+.about-art::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 12.2%; top: 6.1%;
+    width: 80.5%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--mint);
+}
+/* dashed ring that turns slowly */
+.about-art::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 8.8%; top: 2.7%;
+    width: 87.3%;
+    aspect-ratio: 1;
+    border: 2px dashed currentColor;
+    border-radius: 50%;
+    animation: spin 60s linear infinite;
+}
+.about-art__sketch {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    max-width: 440px;
-    margin: 0 auto;
-    animation: float 8s ease-in-out infinite;
+    height: 100%;
+    overflow: visible;
+}
+/* marks drawn on top of the mint disc stay green in both themes, or they would disappear in dark mode */
+.about-art__on-disc {
+    color: var(--green);
+}
+.about-art__sticker {
+    position: absolute;
+    left: 32.9%; top: 4.9%;
+    width: 42.7%;
+    height: auto;
+    filter: drop-shadow(0 14px 18px rgba(12, 59, 12, 0.3));
+    animation: float 7s ease-in-out infinite;
+}
+.about-art__note {
+    position: absolute;
+    font: italic 400 5.6cqw/1 var(--serif);
+}
+.about-art__note--ideas {
+    left: 2.4%; top: 21.3%;
+}
+.about-art__note--hand {
+    left: 69.5%; top: 87.2%;
+}
+/* small vertical label next to the measuring line */
+.about-art__label {
+    position: absolute;
+    left: 2.4%; top: 63.4%;
+    font: 500 2.2cqw/1 var(--mono);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    rotate: -90deg;
+    transform-origin: left top;
+}
+/* the sticker and the notes follow the mouse a little (see main.js) */
+.about-art [data-depth] {
+    translate: var(--px, 0) var(--py, 0);
+    transition: translate 0.5s ease-out;
+}
+/* quick facts: the look comes from .facts (project pages); here they span both columns */
+#about .facts {
+    grid-column: 1 / -1;
+    margin-top: 0;
 }
 .abtxt p:not(.eyebrow) {
     max-width: 58ch;
@@ -577,30 +651,6 @@ MAIN:ABOUT
     margin-top: 22px;
     margin-bottom: 30px;
     background: var(--accent);
-}
-.values {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-    margin: 2.4rem 0 0;
-    padding: 1.6rem 0 0;
-    border-top: 1px solid var(--line);
-}
-.values strong {
-    display: block;
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.7rem;
-    line-height: 1.2;
-}
-.values span {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.4;
-    display: block;
-    margin-top: 0.3rem;
 }
 /*
 MAIN:PROJECT
@@ -1074,6 +1124,7 @@ PROJECT PAGE
     max-width: 48ch;
     font-size: 1.25rem;
 }
+/* used on the project pages and in the About section */
 .facts {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1469,11 +1520,10 @@ RESPONSIVE
         grid-template-columns: 1fr;
         padding: 100px 1.4rem 110px;
     }
-    .abimg img {
-        max-width: 300px;
-    }
-    .values {
-        grid-template-columns: 1fr;
+    .about-art {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
     }
     #project {
         padding: 90px 1.4rem 100px;
